@@ -1,14 +1,15 @@
 ### About CoGen
+Search for your home. Discover your solar savings potential.
 
 ### 🚀 Quickstart on CoGen
 
-### Website Deployed URL: [https://rentalbee-ph.now.sh/](https://rentalbee-ph.now.sh/)
+### Website Deployed URL: [https://co-gen.vercel.app//](https://co-gen.vercel.app/)
 
-##Get Started
+## Get Started
 
 Development prerequisite:
-node ---version v8.11.3
-npm --version 6.2.0
+node ---version v14.7.0
+npm --version 6.14.7
   
 
 Navigate into your new site’s directory and start it up.
@@ -34,7 +35,7 @@ Navigate into your new site’s directory and start it up.
 
 2.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8080`!
+    Your site is now running at `http://localhost:3001`!
 
 
 3.  **Have Linters for maintainability!**
@@ -60,17 +61,12 @@ Navigate into your new site’s directory and start it up.
 
 7). Test build site on local machine (do this before you commit the changes)
 
-###Test Build Local Machine
+### Test Build Local Machine
 
 ```$npm run build 
 ``` 
 ```$npm run start (serve build file)
 ```
-
-
-
-### Contributing
-Please see [CONTRIBUTING](https://github.com/rentalbee/rentalbee.ph/CONTRIBUTING.md) for details.
 
 
 ### Tech Stack 

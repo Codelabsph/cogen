@@ -1,8 +1,14 @@
 import React from "react";
-import Footer from 'components/footer'
+import Footer from "components/footer";
+import Navbar from "components/navbar";
 
 const HomePage = () => {
-  return <div> Home Page</div>;
+  return (
+    <>
+      <Navbar />
+      <Footer />
+    </>
+  );
 };
 
 export default HomePage;
