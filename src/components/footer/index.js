@@ -8,7 +8,7 @@ const Footer = () => {
         Footer icons required Unicons (npm i @iconscout/unicons)
       </h1>
 
-      <footer class="bg-gray-800 pt-10 sm:mt-10 pt-10">
+      <footer class="bg-gray-800 pt-10 sm:mt-10">
         <div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
           <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
             <div class="text-xs uppercase text-gray-400 font-medium mb-6">
