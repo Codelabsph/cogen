@@ -1,0 +1,86 @@
+import React from "react";
+
+const SectionFeatureTwo = () => {
+  return (
+    <>
+      <section class="w-full bg-white px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-32">
+        <h1 class="text-3xl font-bold font-playfair    sm:text-3xl md:text-5xl lg:text-6xl  xxs:text-5xl">
+       How to Save
+        </h1>
+        <div class="flex md:flex-row sm:flex-col xxs:flex-col lg:-mx-8 my-8  font-poppins">
+          <div class="w-2/5  md:w-full xxs:w-full sm:w-full">
+            <p class="text-lg">
+              Solar savings are calculated using roof size and shape, shaded
+              roof areas, local weather, local electricity prices, solar costs,
+              and estimated incentives over time. Using a sample address, take a
+              look at the detailed estimate Project Sunroof can give you.
+            </p>
+          </div>
+
+          <div class="w-3/5  md:w-full xxs:w-full sm:w-full lg:px-8">
+          <div class="lg:col-start-2 md:pl-20">
+            <ul class="mt-10 font-poppins">
+                <li class="bg-cogengreen p-16">
+                    <div class="flex items-center xxs:flex-col ">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="flex items-center justify-center h-20 w-20 rounded-full mb-2 bg-white">
+                                <span class="text-5xl font-bold text-green-200">1</span>
+                            </div>
+                            <span class="tracking-widest text-white text-base uppercase">Search</span>
+                        </div>
+                        <div class="ml-10 xxs:ml-0">
+                            <h5 class="text-xl xxs:text-center xxs:my-5 leading-6 text-white font-bolder mb-5 xxs:font-base">
+                            Search for your home
+                            </h5>
+                            <p class="mt-2 text-base leading-6 text-white text-justify">
+                            We use Google Earth imagery to analyze your roof shape and local weather patterns to create a personalized solar plan.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class=" bg-green-200 p-16">
+                <div class="flex items-center xxs:flex-col ">
+                        <div class="flex-shrink-0 items-center">
+                            <div class="flex items-center justify-center h-20 w-20 rounded-full mb-2 bg-white text-white">
+                                <span class="text-5xl font-bold text-green-200">2</span>
+                            </div>
+                            <span class="tracking-widest text-black text-xs font-bold uppercase">personalize</span>
+                        </div>
+                        <div class="ml-10 xxs:ml-0">
+                            <h5 class="text-xl leading-6  xxs:text-center xxs:my-5 text-black  font-bold mb-5 xxs:font-base">
+                            Personalize your solar analysis
+                            </h5>
+                            <p class="mt-2 text-base leading-6 text-black text-justify">
+                            Adjust your electric bill to fine-tune your savings estimate and the recommended number of solar panels for your home.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="p-16 bg-green-200">
+                <div class="flex items-center xxs:flex-col ">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="flex items-center justify-center h-20 w-20 rounded-full mb-2 bg-white text-white">
+                                <span class="text-5xl font-bold text-green-200">3</span>
+                            </div>
+                            <span class="tracking-widest text-black text-base font-bold uppercase">Select</span>
+                        </div>
+                        <div class="ml-10 xxs:ml-0">
+                            <h5 class="text-xl leading-6 xxs:text-center xxs:my-5 text-black  font-bold mb-5 xxs:font-base">
+                            Compare and select finance<br/>options
+                            </h5>
+                            <p class="mt-2 text-base leading-6 text-black  text-justify">
+                            Compare loan, lease, and purchase options for your solar panels based on your results.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default SectionFeatureTwo;
