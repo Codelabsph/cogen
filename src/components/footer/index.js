@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
       <footer class="bg-black pt-10">
-        <div class="max-w-6xl m-auto text-gray-800  py-10 flex flex-wrap justify-left">
-          <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+        <div class="max-w-7xl m-auto text-gray-800  py-10 flex flex-wrap justify-left">
+          <div class="p-5 w-1/2 sm:w-4/12 md:w-1/4">
             <svg
               width="247"
               height="32"
@@ -172,78 +172,81 @@ const Footer = () => {
             </div>
           </div>
 
-          <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
-            <div class=" uppercase text-white text-xl mb-6">Company</div>
+          <div class="p-5 w-1/2 sm:w-4/12 md:w-2/12">
+            <div class=" text-white text-xl mb-6 font-bold font-poppins">Home</div>
 
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              About us
+              Who we are
             </a>
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              Blog
+              How to save
             </a>
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              Contact us
+              Just for You
             </a>
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              Pricing
-            </a>
-            <a
-              href="#"
-              class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
-            >
-              Testimonials
+              Property
             </a>
           </div>
 
-          <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
-            <div class=" uppercase text-white text-xl mb-6">Support</div>
+          <div class="p-5 w-1/2 sm:w-4/12 md:w-2/12">
+            <div class=" uppercase text-white text-xl mb-6 font-bold">Co-own</div>
 
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              Help center
+              Overview
             </a>
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              Terms of service
+              Mandaluyong
             </a>
             <a
               href="#"
               class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
             >
-              Legal
-            </a>
-            <a
-              href="#"
-              class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
-            >
-              Privacy policy
-            </a>
-            <a
-              href="#"
-              class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
-            >
-              Status
+              Marikina
             </a>
           </div>
+          <div class="p-5 w-1/2 sm:w-4/12 md:w-1/5">
+            <div class=" uppercase text-white text-xl mb-6 font-bold">Blogs</div>
 
-          <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
-            <div class=" uppercase text-white mb-6">
+            <a
+              href="#"
+              class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
+            >
+             All Topics
+            </a>
+            <a
+              href="#"
+              class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
+            >
+              Topic A
+            </a>
+            <a
+              href="#"
+              class="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
+            >
+              Topic B
+            </a>
+          </div>
+          <div class="p-5 w-1/2 sm:w-4/12 md:w-1/5">
+            <div class=" uppercase text-white mb-6 font-bold">
               Stay up to date
             </div>
 
