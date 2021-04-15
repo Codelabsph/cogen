@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-      <section class="w-full h-screen bg-center bg-no-repeat bg-cover">
+      <section id="image" class="w-full h-screen bg-center bg-no-repeat bg-cover">
         <div class="w-full h-screen bg-opacity-50 bg-black flex items-center">
           <div class="mx-80 text-black  xxs:mx-10">
             <h5 class="text-lg font-poppins tracking-widest font-semibold uppercase my-4 sm:text-lg md:text-lg lg:text-lg xs:text-lg xxs:text-3xl">
