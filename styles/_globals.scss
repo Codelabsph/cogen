@@ -2,5 +2,21 @@
 
 
 #image { 
-    background-image: url('../public/assets//img/image.png');
+    background-image: url('../public/assets//img/headerImg.png');
+    background-size: cover;
+}
+
+#welcomeImg {
+    background-image: url('../public/assets//img/welcomeImg.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+}
+
+
+#featureImg {
+    background-image: url('../public/assets//img/featureImg.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
 }

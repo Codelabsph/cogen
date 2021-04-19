@@ -81,15 +81,9 @@ const Navbar = () => {
                   href="#"
                   class="text-gray-900  border-b-2 border-transparent hover:border-primary px-3 py-2  text-sm"
                 >
-                  Blog
+                 Co-own
                 </a>
-                <a
-                  href="#"
-                  class="text-gray-900  border-b-2 border-transparent hover:border-primary px-3 py-2  text-sm"
-                >
-                  Calculate
-              </a>
-
+               
               </div>
             </div>
           </div>
@@ -98,10 +92,10 @@ const Navbar = () => {
               href="#"
               class="text-primary  border-b-2 border-transparent hover:bg-secondary  rounded-md  px-5 py-2  text-sm font-medium"
             >
-              Login
+              Get Started
           </a>
             <button class="bg-primary text-white px-5 py-2  text-sm font-medium rounded-md  hover:bg-secondary hover:text-primary" >
-              Sign up
+            Calculate
             </button>
           </div>
         </div>
@@ -119,23 +113,17 @@ const Navbar = () => {
             href="#"
             class="text-gray-900  border-b-2 border-transparent hover:border-primary block px-3 py-2  text-sm"
           >
-            Blog
+            Co-own
         </a>
-          <a
-            href="#"
-            class="text-gray-900  border-b-2 border-transparent hover:border-primary block px-3 py-2  text-sm"
-          >
-            Calculate
-      </a>
       <div class="space-x-4">
             <a
               href="#"
               class="text-primary  border-b-2 border-transparent hover:bg-secondary  rounded-md  px-5 py-2  text-sm font-medium"
             >
-              Login
+                Get Started 
           </a>
             <button class="bg-primary text-white px-5 py-2  text-sm font-medium rounded-md  hover:bg-secondary hover:text-primary" >
-              Sign up
+            Calculate
             </button>
           </div>
         </div>
