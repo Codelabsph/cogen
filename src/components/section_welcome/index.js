@@ -2,23 +2,23 @@ import React from "react";
 const SectionWelcome = () => {
   return (
     <>
-        <section class="w-full bg-white px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-32">
-        <h1 class="text-7xl font-bold font-playfair tracking-widest  sm:text-base md:text-2xl lg:text-6xl xxs:text-3xl">
+        <section className="w-full bg-white px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-32">
+        <h1 className="text-7xl font-bold font-playfair tracking-widest  sm:text-base md:text-2xl lg:text-6xl xxs:text-3xl">
               Who Cogen.energy is
             </h1>
-            <p class="text-xl font-poppins my-10">
+            <p className="text-xl font-poppins my-10">
               We are a digital company reinventing access to clean energy.
             </p>
-            <p class="text-xl font-poppins">
+            <p className="text-xl font-poppins">
               We offer a platform that creates opportunities for energy
               consumers and other stakeholders to participate and benefit from
               the clean energy transition.
             </p>
-        <div class="flex md:flex-row sm:flex-col xxs:flex-col lg:-mx-8 my-8  font-poppins">
-        <div class="w-full lg:w-1/2  sm:w-full xxs:w-full lg:px-8">
+        <div className="flex md:flex-row sm:flex-col xxs:flex-col lg:-mx-8 my-8  font-poppins">
+        <div className="w-full lg:w-1/2  sm:w-full xxs:w-full lg:px-8">
            
-           <div class="mt-10">
-             <div class="my-14 flex">
+           <div className="mt-10">
+             <div className="my-14 flex">
                <div>
                  <svg
                    width="72"
@@ -42,18 +42,18 @@ const SectionWelcome = () => {
                    />
                  </svg>
                </div>
-               <div class="ml-8 font-poppins">
-                 <h4 class="text-xl font-bold">
+               <div className="ml-8 font-poppins">
+                 <h4 className="text-xl font-bold">
                  Aggregator of Different Solar Solutions
                  </h4>
-                 <p class="my-2 leading-relaxed">
+                 <p className="my-2 leading-relaxed">
                    Our comprehensive services allow you to receive all needed
                    dental care right here in our state-of-art office – from
                    dental cleanings and fillings to dental implants and
                    extractions.
                  </p>
-                 <div class="flex items-center space-x-2 font-bold">
-                   <a href="" class="text-cogengreen">Explore</a>
+                 <div className="flex items-center space-x-2 font-bold">
+                   <a href="" className="text-cogengreen">Explore</a>
                    <div>
                      {" "}
                      <svg
@@ -72,7 +72,7 @@ const SectionWelcome = () => {
                  </div>
                </div>
              </div>
-             <div class="my-14 flex">
+             <div className="my-14 flex">
                <div>
                  <svg
                    width="72"
@@ -96,15 +96,15 @@ const SectionWelcome = () => {
                    />
                  </svg>
                </div>
-               <div class="ml-8  font-poppins">
-                 <h4 class="text-xl font-bold">
+               <div className="ml-8  font-poppins">
+                 <h4 className="text-xl font-bold">
                  Technical and customer monitoring and support
                  </h4>
-                 <p class="my-2 leading-relaxed">
+                 <p className="my-2 leading-relaxed">
                  Know your customer requirements and installed system status anytime and anywhere
                  </p>
-                 <div class="flex items-center space-x-1 font-bold">
-                   <a  href="" class="text-cogengreen">Explore</a>
+                 <div className="flex items-center space-x-1 font-bold">
+                   <a  href="" className="text-cogengreen">Explore</a>
                    <div>
                      {" "}
                      <svg
@@ -124,7 +124,7 @@ const SectionWelcome = () => {
                </div>
              </div>
 
-             <div class="flex">
+             <div className="flex">
                <div>
                  <svg
                    width="72"
@@ -148,15 +148,15 @@ const SectionWelcome = () => {
                    />
                  </svg>
                </div>
-               <div class="ml-8  font-poppins">
-                 <h4 class="text-xl font-bold font-poppins">
+               <div className="ml-8  font-poppins">
+                 <h4 className="text-xl font-bold font-poppins">
                  Co-owning and co-generating
                  </h4>
-                 <p class="my-2 leading-relaxed">
+                 <p className="my-2 leading-relaxed">
                  Own a solar system now at cheaper upfront cost through our co-ownership program
                  </p>
-                 <div class="flex items-center space-x-1 font-bold">
-                   <a  href="" class="text-cogengreen">Explore</a>
+                 <div className="flex items-center space-x-1 font-bold">
+                   <a  href="" className="text-cogengreen">Explore</a>
                    <div>
                      {" "}
                      <svg
@@ -178,7 +178,7 @@ const SectionWelcome = () => {
            </div>
          </div>
 
-          <div class="w-1/2 lg:w-1/2 md:w-full xxs:w-full sm:w-full lg:px-8">
+          <div className="w-1/2 lg:w-1/2 md:w-full xxs:w-full sm:w-full lg:px-8">
             
           </div>
         </div>

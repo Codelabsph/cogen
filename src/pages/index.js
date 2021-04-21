@@ -2,65 +2,109 @@ import React from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
 import Hero from "src/components/hero";
-import SectionWelcome from "src/components/section_welcome";
 import Cta from "src/components/section_CTA";
 import LogoClouds from "src/components/section_logoClouds";
 import SectionTestimonials from "src/components/section_testimonials";
 import SectionWorks from "src/components/section_works";
 import SectionJfy from "src/components/section_jfy";
 import SectionFeatureOne from "src/components/section_featureOne";
-import SectionFeatureTwo from "src/components/section_featureTwo";
 import Section from "src/components/section";
 import IconWithText from "src/components/iconWithText";
-import Sample from "public/assets/sample.svg"
-import ImageLoader from "next/image";
+import IconOne from "public/assets/icon-w-itemOne.svg";
+import IconTwo from "public/assets/icon-w-itemTwo.svg";
+import IconThree from "public/assets/icon-w-itemThree.svg";
+import Logo from "public/assets/logo.svg";
+import FullCard from "src/components/fullCard";
+import IconJfyOne from "public/assets/icon-jfy-one.svg";
+import IconJfyTwo from "public/assets/icon-jfy-two.svg";
+import IconJfyThree from "public/assets/icon-jfy-three.svg";
+import IconJfyFour from "public/assets/icon-jfy-four.svg";
+import SimpleCard from "src/components/simpleCard";
+import CoverImage from "src/components/coverImage";
+import ClickableCards from "src/components/clickableCards";
 
 const HomePage = () => {
   return (
     <>
       <Navbar />
       <Hero />
+      <Section margin={"s"} />
       <Section
-        title={"What is Cogen"}
+        title={"Who CoGen.energy is"}
         subTitle={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur vitae nunc sed velit. Odio aenean sed adipiscing diam. Consectetur lorem donec massa sapien faucibus et molestie. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Nisi lacus sed viverra tellus in hac habitasse platea. Eu consequat ac felis donec. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Tincidunt dui ut ornare lectus sit amet est. Imperdiet massa tincidunt nunc pulvinar. Malesuada fames ac turpis egestas. Ultricies mi eget mauris pharetra et. Enim nulla aliquet porttitor lacus. Non pulvinar neque laoreet suspendisse interdum consectetur libero. Accumsan lacus vel facilisis volutpat est velit egestas dui id. Facilisis volutpat est velit egestas dui. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Erat velit scelerisque in dictum non consectetur a. Volutpat commodo s"
+          "We are a digital company reinventing access to clean energy."
         }
       >
+        <SimpleCard
+          paragraph={
+            "We offer a platform that creates opportunities for energy consumers and other stakeholders to participate and benefit from the clean energy transition."
+          }
+          image={<Logo />}
+        />
+      </Section>
+      <Section>
         <div>
           <IconWithText
-            icon={<Sample />}
-            title="pasagi bobo"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur vitae nunc sed velit. Odio aenean sed adipiscing diam"
+            icon={<IconOne />}
+            title="Co-owning and Co-generating"
+            paragraph="Join the energy transition whether you have a roof property or not through our co-generation and co-ownership packages."
           />
           <IconWithText
-            icon={<Sample />}
-            explore={"https://www.facebook.com/"}
-            title="pasagi bobo"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur vitae nunc sed velit. Odio aenean sed adipiscing diam"
+            icon={<IconTwo />}
+            title="Accredited solar solution providers"
+            paragraph="Have access to accredited solar solution providers based on your estimated system size at shorter turnaround time."
           />
           <IconWithText
-            icon={<Sample />}
-            title="pasagi bobo"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Curabitur vitae nunc sed velit. Odio aenean sed adipiscing diam"
+            icon={<IconThree />}
+            title="Online monitoring of solar rooftop system"
+            paragraph="Know the generation performance and energy savings of your system anytime and anywhere through an online monitoring app."
           />
         </div>
         <div>
-          <ImageLoader
-            src="/assets/img/image.png"
-            alt="me"
-            width="100"
-            height="100"
+          <CoverImage image={<img src={"assets/img/welcomeImg.jpeg"} />} />
+        </div>
+      </Section>
+      <Section title={"How to save"}>
+        <ClickableCards />
+      </Section>
+      <Section>
+        <FullCard />
+      </Section>
+      <Section title={"Just for you"}>
+        <div>
+          <IconWithText
+            icon={<IconJfyOne />}
+            title={"Cost reduction"}
+            paragraph={"Save electricity bills up to 50% through solar. "}
+          />
+          <IconWithText
+            icon={<IconJfyTwo />}
+            title="Ease of use"
+            paragraph={
+              "Streamlined sales and acquisition process for owning a solar system."
+            }
+          />
+        </div>
+        <div>
+          <IconWithText
+            icon={<IconJfyThree />}
+            title={"Co2 reduction"}
+            paragraph={
+              "Help reduce carbon emissions by utilizing clean energy solutions."
+            }
+          />
+          <IconWithText
+            icon={<IconJfyFour />}
+            title={"New Revenue stream"}
+            paragraph={"Make money while doing the right thing."}
           />
         </div>
       </Section>
-      <SectionWelcome />
-      <SectionWorks />
-      <SectionFeatureTwo />
-      <SectionJfy />
+      {/* 
       <SectionFeatureOne />
       <SectionTestimonials />
       <LogoClouds />
-      <Cta />
+      <Cta /> */}
       <Footer />
     </>
   );

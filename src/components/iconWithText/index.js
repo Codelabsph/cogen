@@ -2,11 +2,11 @@ import React from "react";
 import ArrowRight from "public/assets/arrow-right.svg"
 const IconWithText = ({ title, paragraph, icon, explore }) => {
   return (
-    <div class="my-14 flex">
-      <div>
-       {icon}
+    <div class="my-14 flex xxs:flex-col">
+      <div className="flex justify-center">
+       <span>{icon}</span>
       </div>
-      <div class="ml-8  font-poppins">
+      <div class="ml-8 xxs:ml-0 font-poppins">
         <h4 class="text-xl font-bold">
          {title}
         </h4>
@@ -26,5 +26,6 @@ const IconWithText = ({ title, paragraph, icon, explore }) => {
     </div>
   );
 };
+
 
 export default IconWithText;

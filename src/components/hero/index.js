@@ -3,32 +3,30 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-      <section id="image" class="w-full h-screen bg-center bg-no-repeat bg-cover">
-        <div class="w-full h-screen bg-opacity-50 bg-black flex items-center">
-          <div class="mx-80 text-black  xxs:mx-10">
-            <h5 class="text-lg font-poppins tracking-widest font-semibold uppercase my-4 sm:text-lg md:text-lg lg:text-lg xs:text-lg xxs:text-3xl">
+      <section id="image" className="w-full h-screen bg-center bg-no-repeat bg-cover">
+        <div className="w-full h-screen bg-opacity-10 bg-black flex items-center">
+          <div className="mx-80 text-black  xxs:mx-10">
+            <h5 className="text-sm font-poppins tracking-widest font-semibold uppercase mb-10 sm:text-sm md:text-lg lg:text-sm xs:text-lg xxs:text-3xl">
              Start Investing
             </h5>
-            <h1 class="text-6xl mb-4 font-playfair leading-normal sm:text-base md:text-6xl lg:text-6xl xxs:text-4xl font-bold">
+            <h1 className="text-6xl mb-4 font-playfair leading-normal sm:text-base md:text-6xl lg:text-6xl xxs:text-3xl font-bold">
               Discover your solar <br />
               savings potential!
             </h1>
-            <p class="text-xl my-6  sm:text-base md:text-lg   lg:text-lg xxs:text-xl ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />{" "}
-              Nunc odio in et, lectus sit lorem id integer.
+            <p className="text-xl my-6  sm:text-base md:text-lg   lg:text-lg xxs:text-sm  font-semibold">
+            Lower your monthly electric bills by going solar now! Know how much <br/> you can save through our solar calculator.
             </p>
 
             <div>
-              <div class="flex rounded-md  mt-6">
+              <div className="flex rounded-md  mt-6">
                 <input
                   type="text"
                   name="email"
                   id="email"
-                  class="font-manrope block w-6/12 xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none "
-                  placeholder="Your address"
-                  
+                  className="font-manrope block w-6/12 xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none "
+                  placeholder="Your address"   
                 ></input>
-                <button class="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none">
+                <button className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none">
                   Calculate savings
                 </button>
               </div>
