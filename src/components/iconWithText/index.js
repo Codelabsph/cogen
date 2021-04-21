@@ -2,7 +2,7 @@ import React from "react";
 import ArrowRight from "public/assets/arrow-right.svg"
 const IconWithText = ({ title, paragraph, icon, explore }) => {
   return (
-    <div class="my-14 flex xxs:flex-col justify-center">
+    <div class="my-14 flex xxs:flex-col">
       <div className="flex justify-center">
        <span>{icon}</span>
       </div>
