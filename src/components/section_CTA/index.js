@@ -3,21 +3,30 @@ import React from "react";
 const Cta = () => {
   return (
     <>
-      <section class="w-full pb-40 pt-16 bg-cogengreen  text-center">
-        <div class="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:px-8 z-20 font-manrope">
-          <h2 class="text-5xl font-extrabold text-white sm:text-5xl">
-          Let’s discover your solar <br/><br/><span class="">saving potential!</span>
-          </h2>
-          <div class="lg:mt-0 lg:flex-shrink-0">
-            <div class="mt-12 inline-flex rounded-md">
-              <button
-                type="button"
-                class="py-5 px-12  bg-white hover:bg-secondary hover:text-primary  text-cogengreen w-full transition ease-in duration-200 text-center text-2xl font-bold  rounded-lg">
-               Check my property
-              </button>     
-            </div>
+      <section className="w-full bg-cogengreen sm:px-8  py-60">
+        <div class="relative w-full">
+          <div className="z-50 absolute top-0 right-0">
+         
           </div>
-        </div> 
+          <div className="z-0 absolute top-0 right-0">
+          
+          </div>
+          <div className=" font-poppins content xxs:mt-24  ">
+            <h1 className="text-4xl font-bold font-playfair mb-6 xxs:text-2xl">
+              No property?
+            </h1>
+            <p className="text-2xl xxs:text-lg">
+              You don't need to have your own solar rooftop installation to join
+              the energy transition.
+              <br /> Help the environment while earning money through{" "}
+              <span>
+                <a class="text-cogengreen font-semibold" href="">
+                  our co-ownership program
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
       </section>
     </>
   );

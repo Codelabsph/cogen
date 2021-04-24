@@ -12,6 +12,7 @@ import Section from "src/components/section";
 import IconWithText from "src/components/iconWithText";
 import IconOne from "public/assets/icon-w-itemOne.svg";
 import IconTwo from "public/assets/icon-w-itemTwo.svg";
+import Comma from "public/assets/comma.svg";
 import IconThree from "public/assets/icon-w-itemThree.svg";
 import Logo from "public/assets/logo.svg";
 import FullCard from "src/components/fullCard";
@@ -22,13 +23,18 @@ import IconJfyFour from "public/assets/icon-jfy-four.svg";
 import SimpleCard from "src/components/simpleCard";
 import CoverImage from "src/components/coverImage";
 import ClickableCards from "src/components/clickableCards";
-
+import ColumnCards from "src/components/columnCards";
+import ImageContainer from "src/components/imageContainer";
+import FeedbackCarousel from "src/components/feedbackCarousel";
+import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
 const HomePage = () => {
   return (
     <>
       <Navbar />
       <Hero />
+
       <Section margin={"s"} />
+
       <Section
         title={"Who CoGen.energy is"}
         subTitle={
@@ -42,8 +48,9 @@ const HomePage = () => {
           image={<Logo />}
         />
       </Section>
+
       <Section>
-        <div>
+        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <IconWithText
             icon={<IconOne />}
             title="Co-owning and Co-generating"
@@ -60,8 +67,12 @@ const HomePage = () => {
             paragraph="Know the generation performance and energy savings of your system anytime and anywhere through an online monitoring app."
           />
         </div>
-        <div>
-          <CoverImage image={<img src={"assets/img/welcomeImg.jpeg"} />} />
+        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
+          <div>
+            <CoverImage
+              image={<img class="" src={"assets/img/welcomeImg.jpeg"} />}
+            />
+          </div>
         </div>
       </Section>
       <Section title={"How to save"}>
@@ -100,11 +111,61 @@ const HomePage = () => {
           />
         </div>
       </Section>
-      {/* 
-      <SectionFeatureOne />
-      <SectionTestimonials />
-      <LogoClouds />
-      <Cta /> */}
+      <Section title={"Your Co-owning Opportunity"}>
+        <ColumnCards />
+      </Section>
+      <Section title={"Selected Sites"}>
+        <ImageContainer
+          img={"../assets/img/g1.jpg"}
+          title="Mandaluyong project"
+        />
+        <ImageContainer
+          img={"../assets/img/g1.jpg"}
+          title="Mandaluyong project"
+        />
+        <ImageContainer
+          img={"../assets/img/g1.jpg"}
+          title="Mandaluyong project"
+        />
+      </Section>
+
+      <FeedbackCarousel>
+        <div>
+          <FeedbackCarouselItem
+            carouselId={"carousel-1"}
+            status={"checked"}
+            icon={<Comma />}
+            name={"Rollie"}
+            position={"Co-Generator"}
+            feedback={
+              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+            }
+          />
+          <FeedbackCarouselItem
+            carouselId={"carousel-2"}
+            icon={<Comma />}
+            name={"Rollie2"}
+            position={"Co-Generator"}
+            feedback={
+              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+            }
+          />
+          <FeedbackCarouselItem
+            carouselId={"carousel-3"}
+            icon={<Comma />}
+            name={"Rollie3"}
+            position={"Co-Generator"}
+            feedback={
+              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+            }
+          />
+        </div>
+      </FeedbackCarousel>
+
+      
+       
+    
+      {/* <Cta />  */}
       <Footer />
     </>
   );
