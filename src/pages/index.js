@@ -27,6 +27,7 @@ import ColumnCards from "src/components/columnCards";
 import ImageContainer from "src/components/imageContainer";
 import FeedbackCarousel from "src/components/feedbackCarousel";
 import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
+import LogoContainer from "src/components/logoContainer";
 const HomePage = () => {
   return (
     <>
@@ -162,10 +163,10 @@ const HomePage = () => {
         </div>
       </FeedbackCarousel>
 
-      
-       
-    
-      {/* <Cta />  */}
+     
+        <LogoContainer />
+
+      <Cta /> 
       <Footer />
     </>
   );

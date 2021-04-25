@@ -3,7 +3,7 @@ import React from "react";
 const FeedbackCarousel = ({children}) => {
   return (
       <>
-    <div class="carousel relative shadow-2xl bg-white">
+    <div class="carousel relative bg-white">
       <div class="carousel-inner relative overflow-hidden w-full">
       {React.Children.map(children, (child) => (
           <>{React.cloneElement(child)}</>

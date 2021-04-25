@@ -14,7 +14,7 @@ const FeedbackCarouselItem = ({status, name, position, icon, feedback, carouselI
         />
         <div class="carousel-item absolute opacity-0 vh-45">
           <div class="block h-full w-full bg-white text-black text-5xl ">
-            <div class=" flex w-full px-16 justify-center items-center vh-45">
+            <div class=" flex w-full px-16 justify-center items-center vh-55">
               <div class="relative">
                 <div class="flex justify-center xxs:flex-col">
                   <div class="text-2xl pr-28">

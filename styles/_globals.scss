@@ -3,8 +3,12 @@
 #section {
   max-width: 2000px;
 }
-.vh-45{
-  height: 45vh !important;
+.vh-55{
+  height: 55vh !important;
+}
+
+.vh-25{
+ height: 20vh !important;
 }
 
 .carousel-open:checked + .carousel-item {
@@ -39,8 +43,6 @@
 
 #image{
   background: url("../public/assets/img/headerImg.png");
-
-  background-size: cover;
-
+   background-size: cover;
 }
 
