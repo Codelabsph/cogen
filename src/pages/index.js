@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
 import Hero from "src/components/hero";
-import Cta from "src/components/section_CTA";
+import Cta from "src/components/cta";
 import LogoClouds from "src/components/section_logoClouds";
 import SectionTestimonials from "src/components/section_testimonials";
 import SectionWorks from "src/components/section_works";
@@ -41,6 +41,7 @@ const HomePage = () => {
         subTitle={
           "We are a digital company reinventing access to clean energy."
         }
+        padding={"s"}
       >
         <SimpleCard
           paragraph={
@@ -50,7 +51,7 @@ const HomePage = () => {
         />
       </Section>
 
-      <Section>
+      <Section  padding= {'s'}>
         <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <IconWithText
             icon={<IconOne />}
@@ -76,13 +77,13 @@ const HomePage = () => {
           </div>
         </div>
       </Section>
-      <Section title={"How to save"}>
+      <Section title={"How to save"}  isFlexCol={false}>
         <ClickableCards />
       </Section>
       <Section>
         <FullCard />
       </Section>
-      <Section title={"Just for you"}>
+      <Section title={"Just for you"}  isFlexCol={false}>
         <div>
           <IconWithText
             icon={<IconJfyOne />}
@@ -112,7 +113,7 @@ const HomePage = () => {
           />
         </div>
       </Section>
-      <Section title={"Your Co-owning Opportunity"}>
+      <Section title={"Your Co-owning Opportunity"}  isFlexCol={false}>
         <ColumnCards />
       </Section>
       <Section title={"Selected Sites"}>
@@ -163,10 +164,21 @@ const HomePage = () => {
         </div>
       </FeedbackCarousel>
 
-     
-        <LogoContainer />
 
-      <Cta /> 
+ 
+     <LogoContainer />
+  
+        
+
+      <Section
+      fy={true}
+      fx={true}
+      padding={"xxl"}
+      color={"primary"}
+      isFlexCol ={true}
+      >
+        <Cta/>
+      </Section>
       <Footer />
     </>
   );

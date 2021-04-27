@@ -15,7 +15,8 @@ module.exports = {
       },
       screens:{
         'xxs':  {'max': '639px'}
-      }
+      },
+     
     },
   },
   variants: {
