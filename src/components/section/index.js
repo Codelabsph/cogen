@@ -32,7 +32,7 @@ if(sectionType == "fluid")
         {title && title}
       </h1>
       <p className="text-lg font-poppins my-8">{subTitle && subTitle}</p>
-      <div className={`flex md:flex-row sm:flex-col xxs:flex-col lg:-mx-8 my-8  font-poppins ${flexRows} ${spacing} xxs:text-center` }>
+      <div className={`flex align-center  md:flex-row sm:flex-col xxs:flex-col lg:-mx-8 my-8  font-poppins ${flexRows} ${spacing} xxs:text-center` }>
         
         {React.Children.map(children, (child) => (
           <>{React.cloneElement(child)}</>

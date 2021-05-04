@@ -103,7 +103,7 @@ const Blogs= () => {
         />
       </Section>
 
-      <Section flexRow={"center"} spacing={"md"}>
+      <Section  flexRow={"center"} spacing={"md"}>
         <div className="w-1/2 xxs:w-full">
           <img
             className="w-full h-4/6 xxs:w-full"
@@ -246,12 +246,14 @@ const Blogs= () => {
         </div>
       </Section>
       <Section
-        margin={"xl"}
+        margin={"xs"}
+        marginTop={"lg"}
         title={"Your Co-owning Opportunity"}
         isFlexCol={false}
       >
         <ColumnCards />
       </Section>
+      <Section sectionType={"fluid"}>
       <FeedbackCarousel>
         <div>
           <FeedbackCarouselItem
@@ -284,6 +286,7 @@ const Blogs= () => {
           />
         </div>
       </FeedbackCarousel>
+      </Section>
      
      
        <LogoContainer />
