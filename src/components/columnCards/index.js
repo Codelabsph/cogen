@@ -1,9 +1,9 @@
 import React from "react";
-
+import Buttons from "src/components/buttons";
+import ArrowIcon from "public/assets/arrow-icon.svg"
 const ColumnCards = () => {
   return (
     <>
- 
         <div className=" flex md:flex-row sm:flex-col xxs:flex-col lg:-mx-8 my-8  font-poppins xxs:text-center">
           <div className="w-1/2 lg:w-1/2 lg:px-8  md:w-full xxs:w-full sm:w-full">
             <div className="z-50 relative ">
@@ -69,12 +69,7 @@ const ColumnCards = () => {
             </div>
 
             <div className="my-4">
-              <button
-                type="button"
-                className="py-3 bg-cogengreen hover:bg-secondary hover:text-primary  text-white w-44 transition ease-in duration-200 text-lg font-bold  rounded-lg"
-              >
-                Co-own
-              </button>
+            <Buttons text={"Co-own"}  id={"coOwn"}   paddingY={'xs'} btnColor={'primary'} textColor={'white'} width={'xs'} />
             </div>
             <div>
               <div className="flex items-center space-x-1 font-bold">
@@ -82,27 +77,13 @@ const ColumnCards = () => {
                   View More Case Studies
                 </a>
                 <div>
-                  {" "}
-                  <svg
-                    width="16"
-                    height="10"
-                    viewBox="0 0 16 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.1958 1.47145C9.9354 1.2111 9.9354 0.788986 10.1958 0.528636C10.4561 0.268287 10.8782 0.268287 11.1386 0.528636L15.1386 4.52864C15.3989 4.78899 15.3989 5.2111 15.1386 5.47144L11.1386 9.47144C10.8782 9.73179 10.4561 9.73179 10.1958 9.47144C9.9354 9.21109 9.9354 8.78899 10.1958 8.52864L13.0577 5.6667H1.34101C0.968761 5.6667 0.666992 5.36822 0.666992 5.00003C0.666992 4.63184 0.968761 4.33336 1.34101 4.33336H13.0577L10.1958 1.47145Z"
-                      fill="#22C680"
-                    />
-                  </svg>
+                  {" "} 
+                  <ArrowIcon/>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
-     
-    
     </>
   );
 };

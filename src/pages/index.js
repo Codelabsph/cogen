@@ -28,6 +28,7 @@ import ImageContainer from "src/components/imageContainer";
 import FeedbackCarousel from "src/components/feedbackCarousel";
 import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
 import LogoContainer from "src/components/logoContainer";
+
 const HomePage = () => {
   return (
     <>
@@ -40,7 +41,7 @@ const HomePage = () => {
         title={"Who CoGen.energy is"}
         subTitle={
           "We are a digital company reinventing access to clean energy."
-        }
+        }                                        
         padding={"s"}
       >
         <SimpleCard
@@ -163,22 +164,7 @@ const HomePage = () => {
           />
         </div>
       </FeedbackCarousel>
-
-
- 
      <LogoContainer />
-  
-        
-
-      <Section
-      fy={true}
-      fx={true}
-      padding={"xxl"}
-      color={"primary"}
-      isFlexCol ={true}
-      >
-        <Cta/>
-      </Section>
       <Footer />
     </>
   );
