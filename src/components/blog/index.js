@@ -28,24 +28,26 @@ const Blog = ({ icon }) => {
       <Section sectionType={"fluid"} wave={<WaveSvg />}>
         <div className="w-1/2 lg:w-1/2   md:w-full xxs:w-full sm:w-full">
           <div className="flex justify-center  mt-12">
-            <div class="w-3/4 xxs:w-full sm:w-full px-8 pt-6 pb-8 mb-4 flex flex-col my-2 ml-56 xxs:ml-0">
-              <div class="mt-64 mb-12 xxs:mt-4 ">
+            <div className="w-3/4 xxs:w-full sm:w-full px-8 pt-6 pb-8 mb-4 flex flex-col my-2 ml-56 xxs:ml-0">
+              <div className="mt-64 mb-12 xxs:mt-4 ">
                 <h1 className="text-7xl font-bold font-playfair  tracking-widest md:text-2xl lg:text-7xl sm:text-3xl xxs:text-3xl mb-4">
                   Hello Stephen,
                 </h1>
-                <small class="text-xl">Here’s your personalized report!</small>
+                <small className="text-xl">
+                  Here’s your personalized report!
+                </small>
               </div>
-              <div class="mb-8">
+              <div className="mb-8">
                 <h1 className="text-2xl font-bold font-poppins  tracking-widest  sm:text-base md:text-2xl lg:text-2xl xxs:text-2xl mb-4">
                   90 Bedford Street, New York, NY, USA
                 </h1>
-                <small class="text-xl">Address</small>
+                <small className="text-xl">Address</small>
               </div>
-              <div class="mb-8">
+              <div className="mb-8">
                 <h1 className="text-2xl font-bold font-poppins  tracking-widest  sm:text-base md:text-2xl lg:text-2xl xxs:text-2xl mb-4">
                   $100
                 </h1>
-                <small class="text-xl">monthly average bill</small>
+                <small className="text-xl">monthly average bill</small>
               </div>
             </div>
           </div>
@@ -55,8 +57,6 @@ const Blog = ({ icon }) => {
           <img className="w-full" src="../assets/img/map.png"></img>
         </div>
       </Section>
-
-    
 
       <Section flexRow="between">
         <IconWithText
@@ -102,25 +102,25 @@ const Blog = ({ icon }) => {
       </Section>
 
       <Section flexRow={"center"} spacing={"md"}>
-        <div class="w-1/2 xxs:w-full">
+        <div className="w-1/2 xxs:w-full">
           <img
-            class="w-full h-4/6 xxs:w-full"
+            className="w-full h-4/6 xxs:w-full"
             src="../assets/img/welcomeImg.jpeg"
           ></img>
         </div>
-        <div class="w-1/2 xxs:w-full mt-8">
-          <h1 class="text-7xl font-playfair font-bold xxs:text-xl">
+        <div className="w-1/2 xxs:w-full mt-8">
+          <h1 className="text-7xl font-playfair font-bold xxs:text-xl">
             Pay upfront, or <br /> co-generate with us at zero upfront cost
           </h1>
-          <p class="py-12 text-xl">
+          <p className="py-12 text-xl">
             You pay the upfront cost and own the solar rooftop system, or we pay
             the upfront cost and receive monthly payments from you based on
             pay-per-use agreement.
           </p>
-          <small class="text-lg block pb-12">
+          <small className="text-lg block pb-12">
             No property? Looking for better investments?
           </small>
-          <a href="#" class="text-lg text-cogengreen font-semibold">
+          <a href="#" className="text-lg text-cogengreen font-semibold">
             See CoGen’s limited offering
           </a>
         </div>
@@ -155,8 +155,8 @@ const Blog = ({ icon }) => {
             width={"xs"}
             border="xs"
           />
-          <div class="mt-20">
-            <small class="text-gray-400 text-lg">
+          <div className="mt-20">
+            <small className="text-gray-400 text-lg">
               *The needed repair and replacement are not included in the
               estimation
             </small>
@@ -194,28 +194,28 @@ const Blog = ({ icon }) => {
         </div>
       </Section>
       <Section bgColor={"light-green"} padding={"lg"} flexRow={"center"}>
-        <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 rounded-lg">
-          <div class="ml-12 mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
-            <div class="ml-4 mt-2"></div>
-            <div class=" mt-2 mr-16">
-              <h2 class="text-cogengreen text-5xl font-playfair font-bold">
+        <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 rounded-lg">
+          <div className="ml-12 mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+            <div className="ml-4 mt-2"></div>
+            <div className=" mt-2 mr-16">
+              <h2 className="text-cogengreen text-5xl font-playfair font-bold">
                 Limited Offer
               </h2>
             </div>
           </div>
-          <div class="my-6 text-green-300 border border-green-300"> </div>
-          <div class="p-12">
+          <div className="my-6 text-green-300 border border-green-300"> </div>
+          <div className="p-12">
             <div>
               <h1 className="text-4xl font-bold font-playfair tracking-widest  sm:text-base md:text-2xl lg:text-6xl xxs:text-xl xxs:text-justify">
                 No property? Looking for better investments?
               </h1>
 
-              <p class="pt-8 text-xl ">
+              <p className="pt-8 text-xl ">
                 Our co-ownership program is your best option. Own a portion of
                 the system and get your monthly returns from the generated
                 earnings for the next five years.{" "}
               </p>
-              <div class="flex justify-between mt-12 xxs:flex-col">
+              <div className="flex justify-between mt-12 xxs:flex-col">
                 <IconWithText
                   icon={<Hand2Icon />}
                   title="Php 20,000"

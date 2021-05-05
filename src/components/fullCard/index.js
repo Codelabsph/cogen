@@ -2,7 +2,7 @@ import React from "react";
 
 const FullCard = ({ title, paragraph, icon, explore }) => {
   return (
-    <div class="relative w-full border-gray-200 rounded-xl border-2 p-16 mx-auto shadow-lg overflow-hidden">
+    <div className="relative w-full border-gray-200 rounded-xl border-2 p-16 mx-auto shadow-lg overflow-hidden">
       <div className="z-50 absolute top-0 right-0">
         <svg
           width="741"
@@ -40,7 +40,7 @@ const FullCard = ({ title, paragraph, icon, explore }) => {
           energy transition.
           <br /> Help the environment while earning money through{" "}
           <span>
-            <a class="text-cogengreen font-semibold" href="">
+            <a className="text-cogengreen font-semibold" href="">
               our co-ownership program
             </a>
           </span>

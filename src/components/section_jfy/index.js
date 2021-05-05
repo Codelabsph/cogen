@@ -3,18 +3,18 @@ import React from "react";
 const SectionWelcome = () => {
   return (
     <>
-      <section class="w-full bg-white px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-28">
-        <h1 class="text-5xl font-bold uppercase font-playfair tracking-widest  sm:text-base md:text-2xl lg:text-5xl xxs:text-3xl">
+      <section className="w-full bg-white px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-28">
+        <h1 className="text-5xl font-bold uppercase font-playfair tracking-widest  sm:text-base md:text-2xl lg:text-5xl xxs:text-3xl">
           Just for You
         </h1>
-        <p class="text-xl font-poppins my-10">
+        <p className="text-xl font-poppins my-10">
           Get the benefits of owning and saving from clean energy even without
           having your own property
         </p>
-        <div class="flex flex-col md:flex-row lg:-mx-8">
-          <div class="w-full lg:w-1/2 lg:px-8">
-            <div class="mt-10">
-              <div class="my-14 flex">
+        <div className="flex flex-col md:flex-row lg:-mx-8">
+          <div className="w-full lg:w-1/2 lg:px-8">
+            <div className="mt-10">
+              <div className="my-14 flex">
                 <div>
                   <svg
                     width="72"
@@ -38,14 +38,14 @@ const SectionWelcome = () => {
                     />
                   </svg>
                 </div>
-                <div class="ml-8 font-poppins">
-                  <h4 class="text-xl font-bold">Cost reduction</h4>
-                  <p class="my-2 leading-relaxed">
+                <div className="ml-8 font-poppins">
+                  <h4 className="text-xl font-bold">Cost reduction</h4>
+                  <p className="my-2 leading-relaxed">
                     Save electricity bills up to 50% through solar
                   </p>
                 </div>
               </div>
-              <div class="my-14 flex">
+              <div className="my-14 flex">
                 <div>
                   <svg
                     width="72"
@@ -69,9 +69,9 @@ const SectionWelcome = () => {
                     />
                   </svg>
                 </div>
-                <div class="ml-8  font-poppins">
-                  <h4 class="text-xl font-bold">Ease of use</h4>
-                  <p class="my-2 leading-relaxed">
+                <div className="ml-8  font-poppins">
+                  <h4 className="text-xl font-bold">Ease of use</h4>
+                  <p className="my-2 leading-relaxed">
                     Streamlined sales and acquisition process for owning a solar
                     system
                   </p>
@@ -80,9 +80,9 @@ const SectionWelcome = () => {
             </div>
           </div>
 
-          <div class="w-full lg:w-1/2 lg:px-8">
-            <div class="mt-10">
-              <div class="my-14 flex">
+          <div className="w-full lg:w-1/2 lg:px-8">
+            <div className="mt-10">
+              <div className="my-14 flex">
                 <div>
                   <svg
                     width="72"
@@ -106,15 +106,15 @@ const SectionWelcome = () => {
                     />
                   </svg>
                 </div>
-                <div class="ml-8 font-poppins">
-                  <h4 class="text-xl font-bold">Co2 reduction</h4>
-                  <p class="my-2 leading-relaxed">
+                <div className="ml-8 font-poppins">
+                  <h4 className="text-xl font-bold">Co2 reduction</h4>
+                  <p className="my-2 leading-relaxed">
                     Help reduce carbon emissions by utilizing clean energy
                     solutions
                   </p>
                 </div>
               </div>
-              <div class="my-14 flex">
+              <div className="my-14 flex">
                 <div>
                   <svg
                     width="72"
@@ -138,9 +138,9 @@ const SectionWelcome = () => {
                     <path d="M47 31H37V33H47V31Z" fill="#C3E7CD" />
                   </svg>
                 </div>
-                <div class="ml-8  font-poppins">
-                  <h4 class="text-xl font-bold">New Revenue stream</h4>
-                  <p class="my-2 leading-relaxed">
+                <div className="ml-8  font-poppins">
+                  <h4 className="text-xl font-bold">New Revenue stream</h4>
+                  <p className="my-2 leading-relaxed">
                     Opportunity for investment in clean energy
                   </p>
                 </div>

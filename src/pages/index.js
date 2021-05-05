@@ -2,12 +2,6 @@ import React from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
 import Hero from "src/components/hero";
-import Cta from "src/components/cta";
-import LogoClouds from "src/components/section_logoClouds";
-import SectionTestimonials from "src/components/section_testimonials";
-import SectionWorks from "src/components/section_works";
-import SectionJfy from "src/components/section_jfy";
-import SectionFeatureOne from "src/components/section_featureOne";
 import Section from "src/components/section";
 import IconWithText from "src/components/iconWithText";
 import IconOne from "public/assets/icon-w-itemOne.svg";
@@ -34,14 +28,13 @@ const HomePage = () => {
     <>
       <Navbar />
       <Hero />
-
       <Section margin={"s"} />
 
       <Section
         title={"Who CoGen.energy is"}
         subTitle={
           "We are a digital company reinventing access to clean energy."
-        }                                        
+        }
         padding={"s"}
       >
         <SimpleCard
@@ -52,8 +45,8 @@ const HomePage = () => {
         />
       </Section>
 
-      <Section  padding= {'s'}>
-        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
+      <Section padding={"s"}>
+        <div className="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <IconWithText
             icon={<IconOne />}
             title="Co-owning and Co-generating"
@@ -70,21 +63,21 @@ const HomePage = () => {
             paragraph="Know the generation performance and energy savings of your system anytime and anywhere through an online monitoring app."
           />
         </div>
-        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
+        <div className="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <div>
             <CoverImage
-              image={<img class="" src={"assets/img/welcomeImg.jpeg"} />}
+              image={<img className="" src={"assets/img/welcomeImg.jpeg"} />}
             />
           </div>
         </div>
       </Section>
-      <Section title={"How to save"}  isFlexCol={false}>
+      <Section title={"How to save"} isFlexCol={false}>
         <ClickableCards />
       </Section>
       <Section>
         <FullCard />
       </Section>
-      <Section title={"Just for you"}  isFlexCol={false}>
+      <Section title={"Just for you"} isFlexCol={false}>
         <div>
           <IconWithText
             icon={<IconJfyOne />}
@@ -114,7 +107,7 @@ const HomePage = () => {
           />
         </div>
       </Section>
-      <Section title={"Your Co-owning Opportunity"}  isFlexCol={false}>
+      <Section title={"Your Co-owning Opportunity"} isFlexCol={false}>
         <ColumnCards />
       </Section>
       <Section title={"Selected Sites"}>
@@ -131,7 +124,6 @@ const HomePage = () => {
           title="Mandaluyong project"
         />
       </Section>
-
       <FeedbackCarousel>
         <div>
           <FeedbackCarouselItem
@@ -164,7 +156,7 @@ const HomePage = () => {
           />
         </div>
       </FeedbackCarousel>
-     <LogoContainer />
+      <LogoContainer />
       <Footer />
     </>
   );
