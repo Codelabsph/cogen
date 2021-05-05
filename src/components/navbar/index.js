@@ -110,7 +110,7 @@ const Navbar = () => {
             Home
         </a>
           <a
-            href="#"
+            href="/map"
             class="text-gray-900  border-b-2 border-transparent hover:border-primary block px-3 py-2  text-sm"
           >
             Co-own

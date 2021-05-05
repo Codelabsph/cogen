@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
 import Hero from "src/components/hero";
-import Cta from "src/components/section_CTA";
+import Cta from "src/components/cta";
 import LogoClouds from "src/components/section_logoClouds";
 import SectionTestimonials from "src/components/section_testimonials";
 import SectionWorks from "src/components/section_works";
@@ -12,6 +12,7 @@ import Section from "src/components/section";
 import IconWithText from "src/components/iconWithText";
 import IconOne from "public/assets/icon-w-itemOne.svg";
 import IconTwo from "public/assets/icon-w-itemTwo.svg";
+import Comma from "public/assets/comma.svg";
 import IconThree from "public/assets/icon-w-itemThree.svg";
 import Logo from "public/assets/logo.svg";
 import FullCard from "src/components/fullCard";
@@ -22,18 +23,26 @@ import IconJfyFour from "public/assets/icon-jfy-four.svg";
 import SimpleCard from "src/components/simpleCard";
 import CoverImage from "src/components/coverImage";
 import ClickableCards from "src/components/clickableCards";
+import ColumnCards from "src/components/columnCards";
+import ImageContainer from "src/components/imageContainer";
+import FeedbackCarousel from "src/components/feedbackCarousel";
+import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
+import LogoContainer from "src/components/logoContainer";
 
 const HomePage = () => {
   return (
     <>
       <Navbar />
       <Hero />
+
       <Section margin={"s"} />
+
       <Section
         title={"Who CoGen.energy is"}
         subTitle={
           "We are a digital company reinventing access to clean energy."
-        }
+        }                                        
+        padding={"s"}
       >
         <SimpleCard
           paragraph={
@@ -42,8 +51,9 @@ const HomePage = () => {
           image={<Logo />}
         />
       </Section>
-      <Section>
-        <div>
+
+      <Section  padding= {'s'}>
+        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <IconWithText
             icon={<IconOne />}
             title="Co-owning and Co-generating"
@@ -60,17 +70,21 @@ const HomePage = () => {
             paragraph="Know the generation performance and energy savings of your system anytime and anywhere through an online monitoring app."
           />
         </div>
-        <div>
-          <CoverImage image={<img src={"assets/img/welcomeImg.jpeg"} />} />
+        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
+          <div>
+            <CoverImage
+              image={<img class="" src={"assets/img/welcomeImg.jpeg"} />}
+            />
+          </div>
         </div>
       </Section>
-      <Section title={"How to save"}>
+      <Section title={"How to save"}  isFlexCol={false}>
         <ClickableCards />
       </Section>
       <Section>
         <FullCard />
       </Section>
-      <Section title={"Just for you"}>
+      <Section title={"Just for you"}  isFlexCol={false}>
         <div>
           <IconWithText
             icon={<IconJfyOne />}
@@ -100,11 +114,57 @@ const HomePage = () => {
           />
         </div>
       </Section>
-      {/* 
-      <SectionFeatureOne />
-      <SectionTestimonials />
-      <LogoClouds />
-      <Cta /> */}
+      <Section title={"Your Co-owning Opportunity"}  isFlexCol={false}>
+        <ColumnCards />
+      </Section>
+      <Section title={"Selected Sites"}>
+        <ImageContainer
+          img={"../assets/img/g1.jpg"}
+          title="Mandaluyong project"
+        />
+        <ImageContainer
+          img={"../assets/img/g1.jpg"}
+          title="Mandaluyong project"
+        />
+        <ImageContainer
+          img={"../assets/img/g1.jpg"}
+          title="Mandaluyong project"
+        />
+      </Section>
+
+      <FeedbackCarousel>
+        <div>
+          <FeedbackCarouselItem
+            carouselId={"carousel-1"}
+            status={"checked"}
+            icon={<Comma />}
+            name={"Rollie"}
+            position={"Co-Generator"}
+            feedback={
+              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+            }
+          />
+          <FeedbackCarouselItem
+            carouselId={"carousel-2"}
+            icon={<Comma />}
+            name={"Rollie2"}
+            position={"Co-Generator"}
+            feedback={
+              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+            }
+          />
+          <FeedbackCarouselItem
+            carouselId={"carousel-3"}
+            icon={<Comma />}
+            name={"Rollie3"}
+            position={"Co-Generator"}
+            feedback={
+              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+            }
+          />
+        </div>
+      </FeedbackCarousel>
+     <LogoContainer />
       <Footer />
     </>
   );
