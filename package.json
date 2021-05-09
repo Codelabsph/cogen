@@ -1,0 +1,36 @@
+{
+  "name": "cogen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-google-maps": "^9.4.5",
+    "sass": "^1.32.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.0.3",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codelabsph/CoGen.git"
+  },
+  "author": "codelabsph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Codelabsph/CoGen/issues"
+  },
+  "homepage": "https://github.com/Codelabsph/CoGen#readme"
+}
