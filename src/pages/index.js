@@ -29,7 +29,7 @@ import FeedbackCarousel from "src/components/feedbackCarousel";
 import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
 import LogoContainer from "src/components/logoContainer";
 import AbsoluteDiv from "src/components/AbsoluteDiv";
-import FormCards from "src/components/FormCards";
+import Buttons from "src/components/buttons";
 
 const HomePage = () => {
   return (
@@ -72,7 +72,7 @@ const HomePage = () => {
             paragraph="Know the generation performance and energy savings of your system anytime and anywhere through an online monitoring app."
           />
         </div>
-        <div class="w-1/2  sm:w-full xxs:w-full xs:w-full" id="section2">
+        <div class="w-1/2  sm:w-full xxs:w-full xs:w-full" id="welcomeImgSection">
 
         </div>
       </Section>
@@ -167,7 +167,14 @@ const HomePage = () => {
       </FeedbackCarousel>
       </Section>
      <LogoContainer />
-  
+       
+       <Section bgColor="primary" marginStyle="my-0">
+          <div className="h-97 w-full flex justify-center flex-col items-center text-center space-y-8">
+            <h1 className="text-7xl z-50 font-bold font-playfair tracking-widest  text-white sm:text-base md:text-2xl lg:text-7xl xxs:text-3xl">Let’s discover your solar <br/> saving potential!</h1>
+            <Buttons text={"Check my property"} id={"Checkproperty"} paddingY={'xs'} btnColor={'white'} textColor={'primary'} width={'lg'} border='xs' />
+          </div>
+
+       </Section>
       <Footer />
     </>
   );

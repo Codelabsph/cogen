@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputFields = ({ id, text, btnColor, textColor, paddingY, width, border,type, marginBottom, placeholder}) => { 
+const InputFields = ({ id, btnColor, textColor, paddingY, width, border,type, marginBottom, placeholder, label}) => { 
         const Border = border === "xs" ? "border-2 border-cogengreen": border === "sm" ? "border-4 border-cogengreen" : border === "none" ? "border-0" : "";
         const BtnColor = btnColor === "primary" ? "bg-cogengreen" : btnColor === "white" ? "bg-white" : btnColor === "transparent" ? "bg-transparent" : "" ;
         const PaddingY = paddingY === "xs" ? "py-3" : paddingY  === "sm" ? "py-5" : "";
@@ -11,9 +11,9 @@ const InputFields = ({ id, text, btnColor, textColor, paddingY, width, border,ty
 
   return (
     <div className={`${MarginBottom} md:mb-0 w-full`}>
-    <label className="block uppercase tracking-wide text-grey-darker text-xs font-semibold mb-2" for={id} >{text}</label>
+   {label && <label className="block uppercase tracking-wide text-grey-darker text-xs font-semibold mb-2" for={id} >{label}</label> }
     <input
-      className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+      className="appearance-none block w-full bg-gray-100 text-grey-darker border border-red rounded py-3 px-4 mb-3"
       id={id}
       type={type}
       placeholder={placeholder}

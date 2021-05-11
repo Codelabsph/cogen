@@ -1,12 +1,12 @@
 import React from "react";
 
 const Section = ({ title, subTitle, children, margin, padding, bgColor, flexRow,  flexSpacing, marginTop, sectionType,wave}) => {
-  const marginStyle =  margin === "lg"   ? "my-24"   : margin === "md"    ? "my-16"   : margin === "s"  ? "my-5" : margin === "xl"  ? "my-32": "my-0";
+  const marginStyle =  margin === "lg"   ? "my-24"   : margin === "md"    ? "my-16"   : margin === "s"  ? "my-5" : margin === "xl"  ? "my-32": margin ===  "my-0" ? "my-0" : "";
   const TopMargin = marginTop === "xs" ? "mt-6" : marginTop === "sm" ? "mt-12" : marginTop === "lg" ? "mt-16" :  marginTop === "xl" ? "mt-24" :  marginTop === "xxl" ? "mt-32" : "";
   const paddingStyle = padding === "lg"  ? "py-24" : padding === "md" ? "py-16": padding === "s" ? "py-5" : "py-0";
   const flexRows = flexRow === "around" ? "justify-around" : flexRow === "center" ? "justify-center" : flexRow === "between"  ? "justify-between" : ""; 
   const spacing = flexSpacing === "xs" ? "space-x-4 xxs:space-x-0" : flexSpacing === "sm" ? "space-x-6 xxs:space-x-0" : flexSpacing === "md"  ? "space-x-8 xxs:space-x-0" : "lg" ? "space-x-12 xxs:space-x-0" : ""; 
-  const bgStyle = bgColor === "primary" ? "bg-cogengreen" : bgColor === "white" ? "bg-white" : bgColor === "lightGrey" ?  "xxs:bg-gray-1  00 " : "";
+  const bgStyle = bgColor === "primary" ? "bg-cogengreen" : bgColor === "light-green" ? "bg-green-100"  : bgColor === "white" ? "bg-white" : bgColor === "lightGrey" ?  "xxs:bg-gray-1  00 " : "";
 
   
 if(sectionType == "fluid")
