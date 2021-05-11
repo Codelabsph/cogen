@@ -44,11 +44,29 @@
 #image{
   background: url("../public/assets/img/headerImg.png");
    background-size: cover;
+   background-position: center;
 }
+
 
 .h-150vh{
   height: 150vh !important;
   height: calc(var(--vh, 1vh) * 100);
 }
 
+#section2 {
+ 
+  background: url("../public/assets/img/welcomeImg.jpeg");
+   background-size: cover;
+   background-position: center;
+}
 
+.toBottom{
+  z-index: -1 !important;
+}
+
+
+.h-100{
+  padding-top: 34rem !important;
+  padding-bottom: 34rem !important;
+
+}
