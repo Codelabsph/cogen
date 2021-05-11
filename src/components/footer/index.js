@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
   
-      <footer className="bg-black pt-10 w-full">
-        <div className="max-w-7xl m-auto text-gray-800  py-10 flex flex-wrap justify-left">
+      <footer className="bg-black w-full  sm:px-8 lg:px-16 xl:px-40 2xl:px-56">
+        <div className="max-w-auto mx-auto text-gray-800  py-10 flex flex-wrap justify-left">
           <div className="py-5 w-1/2 sm:w-4/12 md:w-1/4">
             <svg
               width="247"

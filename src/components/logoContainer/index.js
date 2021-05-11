@@ -8,7 +8,7 @@ const LogoContainer = ({ img }) => {
       className="max-full mx-auto px-6 py-20"
     >
      <LineTop/>
-      <div className="flex justify-center  items-center vh-25 ">
+      <div className="flex justify-center  items-center h-56 ">
         <img className="" src="../assets/img/solarenergy.png"></img>
       </div>
      <LineBottom/>

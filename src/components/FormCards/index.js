@@ -1,6 +1,6 @@
 import React from "react";
 
-const FullCard = ({ title, paragraph, icon, explore }) => {
+const FormCards = ({ title, paragraph, icon, explore }) => {
   return (
     <div class="relative w-full border-gray-200 rounded-xl border-2 p-16 mx-auto shadow-lg overflow-hidden">
       <div className="z-50 absolute top-0 right-0">
@@ -50,4 +50,4 @@ const FullCard = ({ title, paragraph, icon, explore }) => {
   );
 };
 
-export default FullCard;
+export default FormCards;

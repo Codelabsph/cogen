@@ -3,9 +3,9 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-      <section id="image" className="w-full h-screen bg-center bg-no-repeat bg-cover">
-        <div className="w-full h-screen bg-opacity-10 bg-black flex items-center">
-          <div className="mx-80 text-black  xxs:mx-10">
+      <section id="image" className="w-full bg-center bg-no-repeat bg-cover">
+        <div className="w-full mx-auto px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-56 h-screen xxl:vh-20 bg-opacity-10 bg-black flex items-center">
+          <div className="text-black  xxs:mx-10">
             <h5 className="text-sm font-poppins tracking-widest font-semibold uppercase mb-10 sm:text-sm md:text-lg lg:text-sm xs:text-lg xxs:text-3xl">
              Start Investing
             </h5>
