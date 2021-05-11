@@ -1,12 +1,10 @@
 import React from "react";
-import Footer from "src/components/footer";
 import Section from "src/components/section";
-import Navbar from "src/components/navbar";
+import Map from "src/components/map";
 
-const Calculate = () => {
+const CoOwn = () => {
   return (
     <>
-      <Navbar />
       <Section title={"Let’s calculate your savings!"} marginTop={"lg"}>
         <div className="w-4/12 ">
           <div className="flex rounded-md border mt-6">
@@ -23,13 +21,9 @@ const Calculate = () => {
           </div>
         </div>
       </Section>
-      <Section>
-         {/* container for fullMap */}
-      </Section>
-
-      <Footer />
+      <Map />
     </>
   );
 };
 
-export default Calculate;
+export default CoOwn;
