@@ -104,13 +104,13 @@ const Blogs= () => {
       </Section>
 
       <Section  flexRow={"center"} spacing={"md"}>
-        <div className="w-1/2 xxs:w-full">
-          <img
+        <div className="w-1/2 xxs:w-full" id="blogOffer">
+          {/* <img
             className="w-full h-4/6 xxs:w-full"
             src="../assets/img/welcomeImg.jpeg"
-          ></img>
+          ></img> */}
         </div>
-        <div className="w-1/2 xxs:w-full mt-8">
+        <div className="w-1/2 xxs:w-full">
           <h1 className="text-7xl font-playfair font-bold xxs:text-xl">
             Pay upfront, or <br /> co-generate with us at zero upfront cost
           </h1>

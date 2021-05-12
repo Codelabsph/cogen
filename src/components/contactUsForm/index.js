@@ -16,16 +16,16 @@ const ContactUsForm = ({}) => {
             Want to learn more?
         </h1>
           <div className=" flex flex-row mb-6 xxs:flex-col space-x-4 xxs:space-x-0">
-            <InputFields marginBottom={"xs"} id={"firstname"} type={"text"} text={"First Name"} placeholder={"Jane"} />
-            <InputFields marginBottom={"xs"} id={"Lastname"} type={"text"} text={"Last Name"} placeholder={"Jane"} />
+            <InputFields marginBottom={"xs"} id={"firstname"} type={"text"} label={"First Name"} placeholder={"Jane"} />
+            <InputFields marginBottom={"xs"} id={"Lastname"} type={"text"} label={"Last Name"} placeholder={"Doe"} />
 
           </div>
           <div className=" mb-6 ">
-            <InputFields marginBottom={"xs"} id={"email"} type={"email"} text={"Email"} placeholder={"JaneDoe@gmail.com"} />
+            <InputFields marginBottom={"xs"} id={"email"} type={"email"} label={"Email"} placeholder={"JaneDoe@gmail.com"} />
           </div>
 
           <div className=" mb-6 ">
-            <InputFields marginBottom={"xs"} id={"text"} type={"text"} text={"Phone number"} placeholder={"(123) 456-7890"} />
+            <InputFields marginBottom={"xs"} id={"text"} type={"text"} label={"Phone number"} placeholder={"(123) 456-7890"} />
           </div>
 
           <div className=" mb-6 ">

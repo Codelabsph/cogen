@@ -53,20 +53,38 @@
   height: calc(var(--vh, 1vh) * 100);
 }
 
-#section2 {
+#welcomeImgSection {
  
   background: url("../public/assets/img/welcomeImg.jpeg");
    background-size: cover;
    background-position: center;
 }
 
+#blogOffer {
+ 
+  background: url("../public/assets/img/welcomeImg.jpeg");
+   background-size: cover;
+   background-position: center;
+}
+
+
 .toBottom{
   z-index: -1 !important;
 }
 
+.toTop {
+  z-index: 100 !important;
+}
 
 .h-100{
   padding-top: 34rem !important;
   padding-bottom: 34rem !important;
 
 }
+
+.h-97{
+  padding-top: 20rem !important;
+  padding-bottom: 20rem !important;
+
+}
+
