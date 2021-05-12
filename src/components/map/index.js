@@ -1,10 +1,5 @@
 import { compose, withProps } from "recompose";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
 const apiKey = process.env.NEXT_PUBLIC_GOOLE_MAPS_API_KEY;
@@ -21,24 +16,22 @@ const Map = compose(
 )((props) => {
   const { defaultCenter } = props;
 
-  console.log(google, "google");
-  const getArea = (e) => {
+  const onPolylineComplete = (e) => {
     const newShape = e;
-
     const area = google.maps.geometry.spherical.computeArea(newShape.getPath());
-    alert(area);
+    alert(area, "areaa");
   };
+
   return (
     <GoogleMap
-      defaultZoom={8}
+      defaultZoom={10}
       defaultCenter={defaultCenter || { lat: 14.599512, lng: 120.984222 }}
       options={{
         draggable: true,
+        mapTypeId: "satellite",
+        disableDefaultUI: true,
       }}
     >
-      {props.isMarkerShown && (
-        <Marker position={{ lat: -34.397, lng: 150.644 }} />
-      )}
       <DrawingManager
         defaultDrawingMode={google.maps.drawing.OverlayType.POLYLINE}
         defaultOptions={{
@@ -51,10 +44,10 @@ const Map = compose(
             clickable: false,
             editable: true,
             zIndex: 1,
-            editable:true
+            editable: true,
           },
         }}
-        onPolylineComplete={getArea}
+        onPolylineComplete={onPolylineComplete}
       />
     </GoogleMap>
   );

@@ -2,12 +2,6 @@ import React from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
 import Hero from "src/components/hero";
-import Cta from "src/components/cta";
-import LogoClouds from "src/components/section_logoClouds";
-import SectionTestimonials from "src/components/section_testimonials";
-import SectionWorks from "src/components/section_works";
-import SectionJfy from "src/components/section_jfy";
-import SectionFeatureOne from "src/components/section_featureOne";
 import Section from "src/components/section";
 import IconWithText from "src/components/iconWithText";
 import IconOne from "public/assets/icon-w-itemOne.svg";
@@ -21,7 +15,6 @@ import IconJfyTwo from "public/assets/icon-jfy-two.svg";
 import IconJfyThree from "public/assets/icon-jfy-three.svg";
 import IconJfyFour from "public/assets/icon-jfy-four.svg";
 import SimpleCard from "src/components/simpleCard";
-import CoverImage from "src/components/coverImage";
 import ClickableCards from "src/components/clickableCards";
 import ColumnCards from "src/components/columnCards";
 import ImageContainer from "src/components/imageContainer";
@@ -36,25 +29,22 @@ const HomePage = () => {
     <>
       <Navbar />
       <Hero />
-
       <Section margin={"s"} />
-
       <Section
         title={"Who CoGen.energy is"}
         subTitle={
           "We are a digital company reinventing access to clean energy."
-        }                                        
+        }
         padding={"s"}
       >
         <SimpleCard
           paragraph={
             "We offer a platform that creates opportunities for energy consumers and other stakeholders to participate and benefit from the clean energy transition."
-          } 
+          }
           image={<Logo />}
         />
       </Section>
-
-      <Section  padding= {'s'}>
+      <Section padding={"s"}>
         <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <IconWithText
             icon={<IconOne />}
@@ -72,19 +62,19 @@ const HomePage = () => {
             paragraph="Know the generation performance and energy savings of your system anytime and anywhere through an online monitoring app."
           />
         </div>
-        <div class="w-1/2  sm:w-full xxs:w-full xs:w-full" id="welcomeImgSection">
-
-        </div>
+        <div
+          class="w-1/2  sm:w-full xxs:w-full xs:w-full"
+          id="welcomeImgSection"
+        ></div>
       </Section>
       <AbsoluteDiv height={"md"} />
       <Section title={"How to save"} bgColor={"lightGrey"}>
-        
         <ClickableCards />
       </Section>
       <Section>
         <FullCard />
       </Section>
-      <Section title={"Just for you"} >
+      <Section title={"Just for you"}>
         <div>
           <IconWithText
             icon={<IconJfyOne />}
@@ -115,7 +105,7 @@ const HomePage = () => {
         </div>
       </Section>
       <AbsoluteDiv height={"lg"} />
-      <Section title={"Your Co-owning Opportunity"}  bgColor="lightGrey">
+      <Section title={"Your Co-owning Opportunity"} bgColor="lightGrey">
         <ColumnCards />
       </Section>
       <Section title={"Selected Sites"}>
@@ -132,49 +122,57 @@ const HomePage = () => {
           title="Mandaluyong project"
         />
       </Section>
-<Section type="fluid">
-      <FeedbackCarousel>
-        <div>
-          <FeedbackCarouselItem
-            carouselId={"carousel-1"}
-            status={"checked"}
-            icon={<Comma />}
-            name={"Rollie"}
-            position={"Co-Generator"}
-            feedback={
-              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
-            }
-          />
-          <FeedbackCarouselItem
-            carouselId={"carousel-2"}
-            icon={<Comma />}
-            name={"Rollie2"}
-            position={"Co-Generator"}
-            feedback={
-              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
-            }
-          />
-          <FeedbackCarouselItem
-            carouselId={"carousel-3"}
-            icon={<Comma />}
-            name={"Rollie3"}
-            position={"Co-Generator"}
-            feedback={
-              "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
-            }
+      <Section type="fluid">
+        <FeedbackCarousel>
+          <div>
+            <FeedbackCarouselItem
+              carouselId={"carousel-1"}
+              status={"checked"}
+              icon={<Comma />}
+              name={"Rollie"}
+              position={"Co-Generator"}
+              feedback={
+                "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+              }
+            />
+            <FeedbackCarouselItem
+              carouselId={"carousel-2"}
+              icon={<Comma />}
+              name={"Rollie2"}
+              position={"Co-Generator"}
+              feedback={
+                "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+              }
+            />
+            <FeedbackCarouselItem
+              carouselId={"carousel-3"}
+              icon={<Comma />}
+              name={"Rollie3"}
+              position={"Co-Generator"}
+              feedback={
+                "How do we make our house sustainable? One is to use solar power to reduce our carbon emission. I'm happy to say that, for the first month, our carbon dioxide reduction is around 236.5 kg. However, solar panels are so expensive. Thanks to CoGen!! They offer several options so that  sustainable homes that are powered by solar energy will become possible and affordable. "
+              }
+            />
+          </div>
+        </FeedbackCarousel>
+      </Section>
+      <LogoContainer />
+      <Section bgColor="primary" marginStyle="my-0">
+        <div className="h-97 w-full flex justify-center flex-col items-center text-center space-y-8">
+          <h1 className="text-7xl z-50 font-bold font-playfair tracking-widest  text-white sm:text-base md:text-2xl lg:text-7xl xxs:text-3xl">
+            Let’s discover your solar <br /> saving potential!
+          </h1>
+          <Buttons
+            text={"Check my property"}
+            id={"Checkproperty"}
+            paddingY={"xs"}
+            btnColor={"white"}
+            textColor={"primary"}
+            width={"lg"}
+            border="xs"
           />
         </div>
-      </FeedbackCarousel>
       </Section>
-     <LogoContainer />
-       
-       <Section bgColor="primary" marginStyle="my-0">
-          <div className="h-97 w-full flex justify-center flex-col items-center text-center space-y-8">
-            <h1 className="text-7xl z-50 font-bold font-playfair tracking-widest  text-white sm:text-base md:text-2xl lg:text-7xl xxs:text-3xl">Let’s discover your solar <br/> saving potential!</h1>
-            <Buttons text={"Check my property"} id={"Checkproperty"} paddingY={'xs'} btnColor={'white'} textColor={'primary'} width={'lg'} border='xs' />
-          </div>
-
-       </Section>
       <Footer />
     </>
   );
