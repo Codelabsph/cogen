@@ -1,6 +1,8 @@
 import React from "react";
 import Section from "src/components/section";
 import Map from "src/components/map";
+import PersonalizeCard from "src/components/personalizeCard";
+import MapDetails from "src/components/mapDetails";
 
 const CoOwn = () => {
   return (
@@ -22,6 +24,12 @@ const CoOwn = () => {
         </div>
       </Section>
       <Map />
+      <Section>
+        <MapDetails address="90 Bedford Street, New York, NY, USA" />
+      </Section>
+      <Section>
+        <PersonalizeCard />
+      </Section>
     </>
   );
 };
