@@ -1,6 +1,6 @@
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       colors:{
@@ -16,7 +16,6 @@ module.exports = {
       screens:{
         'xxs':  {'max': '639px'}
       },
-     
     },
   },
   variants: {
