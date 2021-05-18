@@ -1,8 +1,15 @@
 import React from "react";
-import 'styles/_globals.scss'
+import "styles/_globals.scss";
 
-const MyApp = ({ Component, pageProps }) => {
+import Router from "next/router";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
+
+function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
-};
-
+}
 export default MyApp;
