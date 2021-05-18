@@ -1,16 +1,17 @@
 import React from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
-import CoOwn from "src/components/coOwn";
+import Calculate from "src/components/pages/calculate";
+import Layout from "src/components/layout";
 
-const CoOwnPage = () => {
+const CalculatePage = () => {
   return (
-    <>
+    <Layout siteConfig={{ name: "Calculate" }}>
       <Navbar />
-      <CoOwn />
+      <Calculate />
       <Footer />
-    </>
+    </Layout>
   );
 };
 
-export default CoOwnPage;
+export default CalculatePage;

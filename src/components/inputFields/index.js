@@ -1,12 +1,6 @@
 import React from "react";
 
-const InputFields = ({
-  id,
-  type,
-  marginBottom,
-  placeholder,
-  label,
-}) => {
+const InputFields = ({ id, type, marginBottom, placeholder, label }) => {
   const marginBottomStyle =
     marginBottom === "xs" ? "mb-6 md:mb-0" : "sm" ? "mb-10 md:mb-2" : "";
 

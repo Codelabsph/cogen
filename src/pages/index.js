@@ -23,10 +23,11 @@ import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
 import LogoContainer from "src/components/logoContainer";
 import AbsoluteDiv from "src/components/AbsoluteDiv";
 import Buttons from "src/components/buttons";
+import Layout from "src/components/layout";
 
 const HomePage = () => {
   return (
-    <>
+    <Layout siteConfig={{ name: "Index" }}>
       <Navbar />
       <Hero />
       <Section margin={"s"} />
@@ -174,7 +175,7 @@ const HomePage = () => {
         </div>
       </Section>
       <Footer />
-    </>
+    </Layout>
   );
 };
 

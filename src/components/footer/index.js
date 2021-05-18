@@ -2,14 +2,14 @@ import React from "react";
 import FooterIcon from "public/assets/footer-icon.svg";
 import FbIcon from "public/assets/fb-icon.svg";
 import LinkIcon from "public/assets/link-icon.svg";
+
 const Footer = () => {
   return (
     <>
-  
       <footer className="bg-black w-full mx-auto sm:px-8 lg:px-16 xl:px-40 2xl:px-56">
         <div className=" text-gray-800 py-10 flex flex-wrap justify-left xxs:flex-col">
           <div className="py-5 w-1/2 sm:w-4/12 md:w-1/4 xxs:w-full">
-              <FooterIcon/>
+            <FooterIcon />
             <div
               href="#"
               className="mt-10 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
@@ -24,9 +24,8 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center mt-6 space-x-3">
-              <FbIcon/>
-              <LinkIcon/>
-            
+              <FbIcon />
+              <LinkIcon />
             </div>
           </div>
 
@@ -94,13 +93,14 @@ const Footer = () => {
                 placeholder="Your  email address"
               ></input>
             </div>
-            <div> 
-            <a
-              href="#"
-              className="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
-            >
-              Contact Us
-            </a></div>
+            <div>
+              <a
+                href="#"
+                className="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
       </footer>

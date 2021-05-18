@@ -4,7 +4,7 @@ import Map from "src/components/map";
 import PersonalizeCard from "src/components/personalizeCard";
 import MapDetails from "src/components/mapDetails";
 
-const CoOwn = () => {
+const Calculate = () => {
   return (
     <>
       <Section title={"Let’s calculate your savings!"} marginTop={"lg"}>
@@ -34,4 +34,4 @@ const CoOwn = () => {
   );
 };
 
-export default CoOwn;
+export default Calculate;

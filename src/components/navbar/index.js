@@ -12,7 +12,7 @@ const Navbar = () => {
     if (to) router.push(to);
   };
 
-  const Button = ({ title, to }) => {
+  const NavButton = ({ title, to }) => {
     return (
       <button
         onClick={() => handleClickCalculate(to)}
@@ -42,7 +42,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="space-x-4 xxs:hidden">
-            <Button title={"Calculate"} to="/calculate" />
+            <NavButton title={"Calculate"} to="/calculate" />
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
             <NavLink to="/" label="Co-Own" block />
             <div className="space-x-4">
               <NavLink to="/" label="Get Started" color="primary" />
-              <Button title={"Calculate"} to="/calculate" />
+              <NavButton title={"Calculate"} to="/calculate" />
             </div>
           </div>
         )}

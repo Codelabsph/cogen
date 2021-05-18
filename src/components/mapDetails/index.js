@@ -4,7 +4,8 @@ import PigIcon from "public/assets/pig-icon.svg";
 import SocketIcon from "public/assets/socket-icon.svg";
 import SolarIcon from "public/assets/solar-icon.svg";
 import Smallcogen from "public/assets/icon-smallcogen.svg";
-const MapDetails = ({address}) => {
+
+const MapDetails = ({ address }) => {
   return (
     <>
       <div className="w-1/2 xxs:w-full">
@@ -12,7 +13,7 @@ const MapDetails = ({address}) => {
           Your potential savings!
         </h1>
         <h1 className="text-2xl z-50 mt-10 mb-4 font-bold font-poppins tracking-widest  sm:text-base md:text-2xl lg:text-2xl xxs:text-3xl">
-        {address && address}
+          {address && address}
         </h1>
         <small className="text-lg">Address</small>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import InputFields from "src/components/inputFields";
 import Buttons from "src/components/buttons";
+
 const PersonalizeCard = () => {
   return (
     <div className="relative  border-gray-200 rounded-xl pb-36 border-2 p-16 xxs:p-4 mx-auto shadow-lg overflow-hidden w-full    xxs:w-full">
@@ -82,7 +83,7 @@ const PersonalizeCard = () => {
               textColor={"white"}
               width={"xs"}
               border="xs"
-              shadows="yes"
+              shadows
             />
           </div>
         </div>

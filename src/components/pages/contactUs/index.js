@@ -1,11 +1,11 @@
 import React from "react";
 import Section from "src/components/section";
-import WaveSvgRight from "components";
+import ContactUsWaveSvg from "src/components/contactusWaveSvg";
 import ContactUsForm from "src/components/contactUsForm";
 
 const ContactUs = ({}) => {
   return (
-    <Section sectionType={"fluid"} wave={<WaveSvgRight />}>
+    <Section sectionType={"fluid"} wave={<ContactUsWaveSvg />}>
       <ContactUsForm />
       <div className="w-1/2 lg:w-1/2 pb-24 xs:text-center  md:w-full xxs:w-full sm:w-full">
         <div className="pt-32 xxs:pt-0"></div>
@@ -17,6 +17,7 @@ const ContactUs = ({}) => {
                 Don’t hesitate to reach out to us at
                 <br />
                 <span className="text-cogengreen font-bold">
+                  {" "}
                   hello@cogen.energy
                 </span>
               </span>
