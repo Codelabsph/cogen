@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import PropTypes from "prop-types";
 
 const SiteHelmet = (props) => {
@@ -14,10 +14,15 @@ const SiteHelmet = (props) => {
     canonical = `${hostName}${slug}`;
   }
 
-  const siteTitle = `${title || 'CoGen'} - ${name || ''}`;
-
+  const siteTitle = `${title || "CoGen"} - ${name || ""}`;
+  const apiKey = process.env.NEXT_PUBLIC_GOOLE_MAPS_API_KEY;
   return (
-    <Helmet>
+    <Head>
+      <script
+        src={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${apiKey}`}
+        defer
+        async
+      />
       {/* Standard meta tags */}
       {siteTitle && <title>{siteTitle}</title>}
       {canonical && <link rel="canonical" href={canonical} />}
@@ -64,7 +69,7 @@ const SiteHelmet = (props) => {
       {author && <meta property="article:author" content={author} />}
       <meta name="theme-color" content="#fff" />
       <meta httpEquiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    </Helmet>
+    </Head>
   );
 };
 

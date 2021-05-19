@@ -1,20 +1,16 @@
 import { compose, withProps } from "recompose";
-import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
-
+import { withGoogleMap, GoogleMap } from "react-google-maps";
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
-const apiKey = process.env.NEXT_PUBLIC_GOOLE_MAPS_API_KEY;
 
 const Map = compose(
   withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${apiKey}`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: '600px' }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
-  withScriptjs,
   withGoogleMap
 )((props) => {
-  const { defaultCenter } = props;
+  const { defaultCenter, center } = props;
 
   const onPolylineComplete = (e) => {
     const newShape = e;
@@ -24,8 +20,9 @@ const Map = compose(
 
   return (
     <GoogleMap
-      defaultZoom={10}
+      defaultZoom={15}
       defaultCenter={defaultCenter || { lat: 14.599512, lng: 120.984222 }}
+      center={center}
       options={{
         draggable: true,
         mapTypeId: "satellite",
