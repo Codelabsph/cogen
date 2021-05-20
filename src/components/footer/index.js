@@ -2,6 +2,7 @@ import React from "react";
 import FooterIcon from "public/assets/footer-icon.svg";
 import FbIcon from "public/assets/fb-icon.svg";
 import LinkIcon from "public/assets/link-icon.svg";
+import InputWithButton from "src/components/inputWithButton";
 
 const Footer = () => {
   return (
@@ -83,16 +84,7 @@ const Footer = () => {
             <div className=" uppercase text-white mb-6 font-bold">
               Stay up to date
             </div>
-
-            <div className="rounded-md  my-6">
-              <input
-                type="text"
-                name="email"
-                id="email"
-                className="font-manrope text-white block w-full bg-gray-700 px-3 py-2 rounded-md sm:text-sm focus:outline-none "
-                placeholder="Your  email address"
-              ></input>
-            </div>
+            <InputWithButton placeholder="Your Email Address  "/>
             <div>
               <a
                 href="#"

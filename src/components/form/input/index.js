@@ -24,7 +24,7 @@ const Input = ({
         </label>
       )}
       <input
-        className="appearance-none block w-full bg-gray-100 text-grey-darker border border-red rounded py-3 px-4 mb-3"
+        className="appearance-none block w-full bg-white text-grey-darker border border-red rounded py-3 px-4 mb-3"
         id={id}
         type={type && type}
         name={name && name}

@@ -52,9 +52,10 @@ const ContactUsForm = ({}) => {
 
   return (
     <div className="w-1/2 lg:w-1/2 bg-gray-100  md:w-full xxs:w-full sm:w-full">
+      <div className="w-full px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-48 ">
       <form>
         <div className="flex justify-center  mt-20">
-          <div className="w-3/4 xxs:w-full px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+          <div className="w-full xxs:w-full px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
             <h3 className="text-xl tracking-widest font-semibold my-24 uppercase xxs:my-12">
               Contact Us
             </h3>
@@ -201,6 +202,7 @@ const ContactUsForm = ({}) => {
           </div>
         </div>
       </form>
+      </div>
     </div>
   );
 };
