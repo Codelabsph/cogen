@@ -84,8 +84,10 @@ const Footer = () => {
             <div className=" uppercase text-white mb-6 font-bold">
               Stay up to date
             </div>
+          
             <InputWithButton placeholder="Your Email Address  "/>
-            <div>
+           
+            <div className="pt-2">
               <a
                 href="#"
                 className="my-3 block text-gray-300 hover:text-gray-300 text-sm font-medium duration-700"
