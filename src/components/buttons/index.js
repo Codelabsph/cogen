@@ -10,6 +10,7 @@ const Buttons = ({
   border,
   shadows,
   onClick,
+  disabled,
 }) => {
   const borderStyle =
     border === "xs"
@@ -44,6 +45,7 @@ const Buttons = ({
       id={id}
       className={`${paddingYstyle} ${btnColorStyle} ${textColorStyle} ${widthStyle} ${borderStyle}  ${shadowsStyle} hover:bg-secondary hover:text-primary  text-white w-44 transition ease-in duration-200 text-lg font-bold  rounded-lg`}
       onClick={onClick && onClick}
+      disabled={disabled && disabled}
     >
       {text}
     </button>

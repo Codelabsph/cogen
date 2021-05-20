@@ -1,6 +1,15 @@
 import React from "react";
 
-const InputFields = ({ id, type, marginBottom, placeholder, label }) => {
+const InputFields = ({
+  id,
+  type,
+  marginBottom,
+  placeholder,
+  label,
+  onChange,
+  value,
+  name
+}) => {
   const marginBottomStyle =
     marginBottom === "xs" ? "mb-6 md:mb-0" : "sm" ? "mb-10 md:mb-2" : "";
 
@@ -17,8 +26,11 @@ const InputFields = ({ id, type, marginBottom, placeholder, label }) => {
       <input
         className="appearance-none block w-full bg-gray-100 text-grey-darker border border-red rounded py-3 px-4 mb-3"
         id={id}
-        type={type}
+        type={type && type}
+        name={name && name}
         placeholder={placeholder}
+        onChange={onChange && onChange}
+        value={value && value}
       />
     </div>
   );

@@ -18,10 +18,11 @@ const Map = compose(
     alert(area, "areaa");
   };
 
+  const defaultCenterVal = { lat: 14.599512, lng: 120.984222 }
   return (
     <GoogleMap
       defaultZoom={15}
-      defaultCenter={defaultCenter || { lat: 14.599512, lng: 120.984222 }}
+      defaultCenter={defaultCenter || defaultCenterVal}
       center={center}
       options={{
         draggable: true,

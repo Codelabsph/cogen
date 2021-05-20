@@ -2,7 +2,7 @@ import React from "react";
 import InputFields from "src/components/inputFields";
 import Buttons from "src/components/buttons";
 
-const PersonalizeCard = () => {
+const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
   return (
     <div className="relative  border-gray-200 rounded-xl pb-36 border-2 p-16 xxs:p-4 mx-auto shadow-lg overflow-hidden w-full    xxs:w-full">
       <div className="xxs:hidden">
@@ -48,6 +48,9 @@ const PersonalizeCard = () => {
                 type={"text"}
                 text={"First Name"}
                 placeholder={"First Name"}
+                value={data?.first_name}
+                onChange={handleOnChange}
+                name="first_name"
               />
               <InputFields
                 marginBottom={"xs"}
@@ -55,6 +58,9 @@ const PersonalizeCard = () => {
                 type={"text"}
                 text={"Last Name"}
                 placeholder={"Last Name"}
+                value={data?.last_name}
+                onChange={handleOnChange}
+                name="last_name"
               />
             </div>
             <div className=" mb-2">
@@ -64,6 +70,9 @@ const PersonalizeCard = () => {
                 type={"email"}
                 text={"email"}
                 placeholder={"Email"}
+                value={data?.email}
+                onChange={handleOnChange}
+                name="email"
               />
             </div>
             <div className=" w-1/2 mb-2 xxs:w-full">
@@ -73,6 +82,9 @@ const PersonalizeCard = () => {
                 type={"text"}
                 text={"etm"}
                 placeholder={"Estimated monthtly bill"}
+                value={data?.estimate_monthly_bill}
+                onChange={handleOnChange}
+                name="estimate_monthly_bill"
               />
             </div>
             <Buttons
@@ -84,6 +96,7 @@ const PersonalizeCard = () => {
               width={"xs"}
               border="xs"
               shadows
+              onClick={handleSave}
             />
           </div>
         </div>
