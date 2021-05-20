@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputFields = ({
+const Input = ({
   id,
   type,
   marginBottom,
@@ -8,7 +8,7 @@ const InputFields = ({
   label,
   onChange,
   value,
-  name
+  name,
 }) => {
   const marginBottomStyle =
     marginBottom === "xs" ? "mb-6 md:mb-0" : "sm" ? "mb-10 md:mb-2" : "";
@@ -36,4 +36,4 @@ const InputFields = ({
   );
 };
 
-export default InputFields;
+export default Input;

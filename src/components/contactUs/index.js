@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "src/components/section";
-import WaveSvgRight from "components";
+import WaveSvgRight from "src/components/contactusWaveSvg";
 import ContactUsForm from "src/components/contactUsForm";
 
 const ContactUs = ({}) => {
@@ -16,9 +16,12 @@ const ContactUs = ({}) => {
               <span className="font-normal font-poppins block text-lg pt-12 tracking-normal xxs:text-center xs:text-center xxs:py-12">
                 Don’t hesitate to reach out to us at
                 <br />
-                <span className="text-cogengreen font-bold">
+                <a
+                  href="mailto:hello@cogen.energy"
+                  className="text-cogengreen font-bold"
+                >
                   hello@cogen.energy
-                </span>
+                </a>
               </span>
             </h1>
           </div>

@@ -4,8 +4,14 @@ import PigIcon from "public/assets/pig-icon.svg";
 import SocketIcon from "public/assets/socket-icon.svg";
 import SolarIcon from "public/assets/solar-icon.svg";
 import Smallcogen from "public/assets/icon-smallcogen.svg";
+import {
+  estimatedAnnualEnergyOuputkWh,
+  estimatedAnnualSavingsPeso,
+} from "src/helpers/calculation.service";
 
-const MapDetails = ({ address }) => {
+const MapDetails = ({ address, area }) => {
+  const estimatedAnnualEnergyOuputkWhVal = estimatedAnnualEnergyOuputkWh(area);
+  const estimated10YearsSavingsPesoVal = estimatedAnnualSavingsPeso(area);
   return (
     <>
       <div className="w-1/2 xxs:w-full">
@@ -21,19 +27,19 @@ const MapDetails = ({ address }) => {
         <div className="">
           <IconWithText
             icon={<SocketIcon />}
-            title="1,746 kWh"
+            title={`${estimatedAnnualEnergyOuputkWhVal} kWh`}
             paragraph="Estimated energy ourput for a year"
           />
           <IconWithText
             icon={<PigIcon />}
-            title="$10,000"
+            title={`P ${estimated10YearsSavingsPesoVal}`}
             paragraph="Estimated savings over 10 years"
           />
         </div>
         <div>
           <IconWithText
             icon={<SolarIcon />}
-            title="634 sq feet"
+            title={`${area} sq feet`}
             paragraph="Available area for solar panels"
           />
           <IconWithText

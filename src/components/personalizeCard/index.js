@@ -1,5 +1,5 @@
 import React from "react";
-import InputFields from "src/components/inputFields";
+import Input from "src/components/form/input";
 import Buttons from "src/components/buttons";
 
 const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
@@ -42,7 +42,7 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
           </h1>
           <div className="w-4/6 xxs:w-full">
             <div className="toTop flex flex-row mb-2 xxs:flex-col space-x-4 xxs:space-x-0">
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"firstname"}
                 type={"text"}
@@ -52,7 +52,7 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
                 onChange={handleOnChange}
                 name="first_name"
               />
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"Lastname"}
                 type={"text"}
@@ -64,7 +64,7 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
               />
             </div>
             <div className=" mb-2">
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"email"}
                 type={"email"}
@@ -76,10 +76,10 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
               />
             </div>
             <div className=" w-1/2 mb-2 xxs:w-full">
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"etm"}
-                type={"text"}
+                type={"number"}
                 text={"etm"}
                 placeholder={"Estimated monthtly bill"}
                 value={data?.estimate_monthly_bill}

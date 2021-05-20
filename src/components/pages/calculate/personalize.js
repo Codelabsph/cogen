@@ -22,19 +22,28 @@ import LogoContainer from "src/components/logoContainer";
 import ColumnCards from "src/components/columnCards";
 import Comma from "public/assets/comma.svg";
 import BlogWaveSvg from "src/components/blogWaveSvg";
+import {
+  estimatedAnnualEnergyOuputkWh,
+  estimatedAnnualSavingsPeso,
+  carbonEmissionSaved,
+  equivalentLitersOfDiesel,
+} from "src/helpers/calculation.service";
 
-const Personalize = () => {
+const Personalize = ({ data, area, address }) => {
+  const estimatedAnnualEnergyOuputkWhVal = estimatedAnnualEnergyOuputkWh(area);
+  const estimated10YearsSavingsPesoVal = estimatedAnnualSavingsPeso(area);
+  const carbonEmissionSavedVal = carbonEmissionSaved(area);
+  const equivalentLitersOfDieselVal = equivalentLitersOfDiesel(area);
+
   return (
     <>
-      <Navbar />
-      <>
         <Section sectionType={"fluid"} wave={<BlogWaveSvg />}>
           <div className="w-1/2 lg:w-1/2   md:w-full xxs:w-full sm:w-full">
             <div className="flex justify-center  mt-12">
               <div className="w-3/4 xxs:w-full sm:w-full px-8 pt-6 pb-8 mb-4 flex flex-col my-2 ml-56 xxs:ml-0">
                 <div className="mt-64 mb-12 xxs:mt-4 ">
                   <h1 className="text-7xl font-bold font-playfair  tracking-widest md:text-2xl lg:text-7xl sm:text-3xl xxs:text-3xl mb-4">
-                    Hello Stephen,
+                    Hello {data?.first_name},
                   </h1>
                   <small className="text-xl">
                     Here’s your personalized report!
@@ -42,13 +51,13 @@ const Personalize = () => {
                 </div>
                 <div className="mb-8">
                   <h1 className="text-2xl font-bold font-poppins  tracking-widest  sm:text-base md:text-2xl lg:text-2xl xxs:text-2xl mb-4">
-                    90 Bedford Street, New York, NY, USA
+                    {address}
                   </h1>
                   <small className="text-xl">Address</small>
                 </div>
                 <div className="mb-8">
                   <h1 className="text-2xl font-bold font-poppins  tracking-widest  sm:text-base md:text-2xl lg:text-2xl xxs:text-2xl mb-4">
-                    $100
+                    P {data?.estimate_monthly_bill}
                   </h1>
                   <small className="text-xl">monthly average bill</small>
                 </div>
@@ -63,17 +72,17 @@ const Personalize = () => {
         <Section flexRow="between">
           <IconWithText
             icon={<PigIcon />}
-            title="$10,000"
+            title={`P ${estimated10YearsSavingsPesoVal}`}
             paragraph="Estimated savings over 10 years"
           />
           <IconWithText
             icon={<SocketIcon />}
-            title="1,746 hours"
+            title={`${estimatedAnnualEnergyOuputkWhVal} kWh`}
             paragraph="Estimated energy ourput for a year"
           />
           <IconWithText
             icon={<SolarIcon />}
-            title="634 sq feet"
+            title={`${area} sq feet`}
             paragraph="Available area for solar panels"
           />
         </Section>
@@ -88,28 +97,23 @@ const Personalize = () => {
         >
           <IconWithText
             icon={<CloudsIcon />}
-            title="$10,000"
-            paragraph="Estimated savings over 10 years"
+            title={`${carbonEmissionSavedVal} metric tons`}
+            paragraph="co2 not emmited"
           />
           <IconWithText
             icon={<DieselIcon />}
-            title="1,746 hours"
-            paragraph="Estimated energy ourput for a year"
+            title={`${equivalentLitersOfDieselVal} liters`}
+            paragraph="Diesel saved"
           />
           <IconWithText
             icon={<PlantIcon />}
-            title="634 sq feet"
-            paragraph="Available area for solar panels"
+            title="225.9 seedings"
+            paragraph="Grown"
           />
         </Section>
 
         <Section flexRow={"center"} spacing={"md"}>
-          <div className="w-1/2 xxs:w-full" id="blogOffer">
-            {/* <img
-            className="w-full h-4/6 xxs:w-full"
-            src="../assets/img/welcomeImg.jpeg"
-          ></img> */}
-          </div>
+          <div className="w-1/2 xxs:w-full" id="blogOffer" />
           <div className="w-1/2 xxs:w-full">
             <h1 className="text-7xl font-playfair font-bold xxs:text-xl">
               Pay upfront, or <br /> co-generate with us at zero upfront cost
@@ -289,8 +293,6 @@ const Personalize = () => {
         </Section>
         <LogoContainer />
       </>
-      <Footer />
-    </>
   );
 };
 

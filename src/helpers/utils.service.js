@@ -1,0 +1,9 @@
+
+export const listErrors = (err) => {
+  const error = err?.response?.data?.message;
+  return `Something went wrong: ${error}`;
+};
+
+export function isEmail(email) {
+  return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
+}

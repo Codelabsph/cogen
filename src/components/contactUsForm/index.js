@@ -1,8 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import Buttons from "src/components/buttons";
-import InputFields from "src/components/inputFields";
+import Input from "src/components/form/input";
+import { postContacts } from "src/helpers/api.service";
+import { toast } from "src/components/toast";
+import { listErrors, isEmail } from "src/helpers/utils.service";
+import Select from "src/components/form/select";
+import Textarea from "src/components/form/textarea";
 
 const ContactUsForm = ({}) => {
+  const defaultData = {
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    how_can_our_sales_team_help_you: "",
+    how_did_you_hear_about_us: "",
+    what_can_help_with_you: "",
+  };
+  const [data, setData] = useState({
+    ...defaultData,
+  });
+
+  const handleOnChange = (e) => {
+    const name = e?.target?.name;
+    const value = e?.target?.value;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
+  const handleSave = () => {
+    if (!data?.first_name) return toast.error("Please enter your first name");
+    if (!data?.last_name) return toast.error("Please enter your last name");
+    if (!data?.email) return toast.error("Please enter your email");
+    if (!isEmail(data?.email))
+      return toast.error("Please enter your valid email");
+    if (!data?.phone_number)
+      return toast.error("Please enter your phone number");
+    else {
+      postContacts(data)
+        .then(() => {
+          setData(defaultData);
+          toast.success("Successfully sent your contact details");
+        })
+        .catch((err) => {
+          toast.error(listErrors(err));
+        });
+    }
+  };
+
   return (
     <div className="w-1/2 lg:w-1/2 bg-gray-100  md:w-full xxs:w-full sm:w-full">
       <form>
@@ -15,107 +62,128 @@ const ContactUsForm = ({}) => {
               Want to learn more?
             </h1>
             <div className=" flex flex-row mb-6 xxs:flex-col space-x-4 xxs:space-x-0">
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"firstname"}
                 type={"text"}
                 label={"First Name"}
                 placeholder={"Jane"}
+                value={data?.first_name}
+                onChange={handleOnChange}
+                name="first_name"
               />
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"Lastname"}
-                type={"text"}
+                type={"textarea"}
+                rows="6"
                 label={"Last Name"}
                 placeholder={"Doe"}
+                value={data?.last_name}
+                onChange={handleOnChange}
+                name="last_name"
               />
             </div>
             <div className=" mb-6 ">
-              <InputFields
+              <Input
                 marginBottom={"xs"}
                 id={"email"}
                 type={"email"}
                 label={"Email"}
                 placeholder={"JaneDoe@gmail.com"}
+                value={data?.email}
+                onChange={handleOnChange}
+                name="email"
               />
             </div>
-
-            <div className=" mb-6 ">
-              <InputFields
+            <div className="mb-6">
+              <Input
                 marginBottom={"xs"}
                 id={"text"}
                 type={"text"}
                 label={"Phone number"}
                 placeholder={"(123) 456-7890"}
+                value={data?.phone_number}
+                onChange={handleOnChange}
+                name="phone_number"
               />
             </div>
-
-            <div className=" mb-6 ">
+            <div className="mb-6">
               <div className=" mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-grey-darker text-xs font-semibold mb-2"
-                  for="grid-state"
-                >
-                  How can our sales team help you?
-                </label>
-                <div className="relative">
-                  <select
-                    id="help"
-                    name="help"
-                    autocomplete="country"
-                    className=" block   w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
-                  >
-                    <option disabled selected>
-                      Select One
-                    </option>
-                    <option>I want to co-own a property</option>
-                    <option>I want to co-generate in my property</option>
-                    <option>I want to buy outright</option>
-                    <option>Others</option>
-                  </select>
-                </div>
+                <Select
+                  name={"how_can_our_sales_team_help_you"}
+                  label="How can our sales team help you?"
+                  value={data?.how_can_our_sales_team_help_you}
+                  options={[
+                    {
+                      id: "",
+                      value: "Select One",
+                      disabled: true,
+                      selected: true,
+                    },
+                    {
+                      id: "I want to co-own a property",
+                      value: "I want to co-own a property",
+                    },
+                    {
+                      id: "I want to co-generate in my property",
+                      value: "I want to co-generate in my property",
+                    },
+                    {
+                      id: "I want to buy outright",
+                      value: "I want to buy outright",
+                    },
+                    {
+                      id: "Others",
+                      value: "Others",
+                    },
+                  ]}
+                  onChange={handleOnChange}
+                />
               </div>
             </div>
             <div className=" mb-6 ">
               <div className=" mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-grey-darker text-xs font-semibold mb-2"
-                  for="help"
-                >
-                  How can our sales team help you?
-                </label>
-                <div className="relative">
-                  <select
-                    id="help2"
-                    name="help2"
-                    autocomplete="help2"
-                    className=" block   w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
-                  >
-                    <option disabled selected>
-                      Select One
-                    </option>
-                    <option>Word of Mouth</option>
-                    <option>Online Search</option>
-                    <option>Facebook</option>
-                    <option>Others</option>
-                  </select>
-                </div>
+                <Select
+                  name={"how_did_you_hear_about_us"}
+                  label="How did you hear about us?"
+                  value={data?.how_did_you_hear_about_us}
+                  options={[
+                    {
+                      id: "",
+                      value: "Select One",
+                      disabled: true,
+                      selected: true,
+                    },
+                    {
+                      id: "Word of Mouth",
+                      value: "Word of Mouth",
+                    },
+                    {
+                      id: "Online Search",
+                      value: "Online Search",
+                    },
+                    {
+                      id: "Facebook",
+                      value: "Facebook",
+                    },
+                    {
+                      id: "Others",
+                      value: "Others",
+                    },
+                  ]}
+                  onChange={handleOnChange}
+                />
               </div>
             </div>
             <div className=" mb-6 ">
               <div className=" mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-grey-darker text-xs font-semibold mb-2"
-                  for="help3"
-                >
-                  What can we help you with?
-                </label>
-                <textarea
-                  id="help3"
-                  name="help3"
-                  rows="6"
-                  className=" p-4 block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
-                ></textarea>
+                <Textarea
+                  label=" What can we help you with?"
+                  onChange={handleOnChange}
+                  name="what_can_help_with_you"
+                  value={data?.what_can_help_with_you}
+                />
               </div>
             </div>
             <div className="mt-6  mb-24 xxs:mb-12 xs:mb-12">
@@ -127,6 +195,7 @@ const ContactUsForm = ({}) => {
                 textColor={"white"}
                 width={"xs"}
                 border="xs"
+                onClick={handleSave}
               />
             </div>
           </div>

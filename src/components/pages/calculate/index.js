@@ -6,20 +6,20 @@ import MapDetails from "src/components/mapDetails";
 import { usePlacesWidget } from "react-google-autocomplete";
 import { postContacts } from "src/helpers/api.service";
 import Personalize from "./personalize";
-import { useSnackbar } from 'notistack';
-
+import { toast } from "src/components/toast";
+import { listErrors, isEmail } from "src/helpers/utils.service";
 
 const Calculate = () => {
   const [center, setCenter] = useState({ lat: 14.599512, lng: 120.984222 });
   const [place, setPlace] = useState();
   const [personalizeDone, setPersonalizeDone] = useState(false);
-
+  const [area, setArea] = useState(0);
 
   const [data, setData] = useState({
     first_name: "",
     last_name: "",
     email: "",
-    estimate_monthly_bill: 0,
+    estimate_monthly_bill: "",
   });
 
   const { ref } = usePlacesWidget({
@@ -49,12 +49,26 @@ const Calculate = () => {
   };
 
   const handleSave = () => {
-    alert("bobo");
+    if (!data?.first_name) return toast.error("Please enter your first name");
+    if (!data?.last_name) return toast.error("Please enter your last name");
+    if (!data?.email) return toast.error("Please enter your email");
+    if (!isEmail(data?.email))
+      return toast.error("Please enter your valid email");
+    if (!data?.estimate_monthly_bill)
+      return toast.error("Please enter your estimate monthly bill");
 
-      postContacts(data).then((res) => console.log(res)).catch(err => {
-        console.log(err?.response, 'qweqeqe')
-      });
-  
+    if (!area && area <= 0)
+      return toast.error("Please draw your calculated roof area above");
+    else {
+      postContacts(data)
+        .then(() => {
+          setPersonalizeDone(true);
+          toast.success("Successfully sent your contact details");
+        })
+        .catch((err) => {
+          toast.error(listErrors(err));
+        });
+    }
   };
 
   return (
@@ -80,20 +94,25 @@ const Calculate = () => {
               </div>
             </div>
           </Section>
-          <Map center={center} />
+          <Map center={center} setArea={setArea} />
           <Section>
-            <MapDetails address={place?.formatted_address} />
+            <MapDetails address={place?.formatted_address} area={area} />
           </Section>
           <Section>
             <PersonalizeCard
               data={data}
               handleOnChange={handleOnChange}
               handleSave={handleSave}
+              disabledButton={area < 0}
             />
           </Section>
         </>
       ) : (
-        <Personalize />
+        <Personalize
+          data={data}
+          area={area}
+          address={place?.formatted_address}
+        />
       )}
     </>
   );
