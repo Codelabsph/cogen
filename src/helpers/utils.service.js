@@ -1,4 +1,3 @@
-
 export const listErrors = (err) => {
   const error = err?.response?.data?.message;
   return `Something went wrong: ${error}`;
@@ -7,3 +6,7 @@ export const listErrors = (err) => {
 export function isEmail(email) {
   return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
 }
+
+export const scrollToTop = () => {
+  return window.scrollTo(0, 0);
+};

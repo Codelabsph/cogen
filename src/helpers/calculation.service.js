@@ -11,19 +11,25 @@ export const systemSizekWp = (area) => {
 };
 
 export const estimatedAnnualEnergyOuputkWh = (area) => {
-  return systemSizekWp(area) * irradiance * 30 * 12 * efficiency;
+  return Number(
+    systemSizekWp(area) * irradiance * 30 * 12 * efficiency
+  ).toFixed(2);
 };
 
 export const estimatedAnnualSavingsPeso = (area) => {
-  return (
-    systemSizekWp(area) * irradiance * 30 * 12 * efficiency * cost_of_electricty
-  );
+  return Number(
+    area * irradiance * 30 * 12 * efficiency * cost_of_electricty
+  ).toFixed(2);
 };
 
 export const carbonEmissionSaved = (area) => {
-  return emmision_factor * estimatedAnnualEnergyOuputkWh(area);
+  return Number(emmision_factor * estimatedAnnualEnergyOuputkWh(area)).toFixed(
+    2
+  );
 };
 
 export const equivalentLitersOfDiesel = (area) => {
-  return liters_of_diesel_emission_factor * carbonEmissionSaved(area);
+  return Number(
+    liters_of_diesel_emission_factor * carbonEmissionSaved(area)
+  ).toFixed(2);
 };

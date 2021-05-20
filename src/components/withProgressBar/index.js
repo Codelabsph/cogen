@@ -7,7 +7,7 @@ const TextWithHeading = () => {
         <select
           id="help2"
           name="help2"
-          autocomplete="help2"
+          autoComplete="help2"
           className=" block   w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
         >
           <option disabled selected>

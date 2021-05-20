@@ -7,13 +7,15 @@ import { usePlacesWidget } from "react-google-autocomplete";
 import { postContacts } from "src/helpers/api.service";
 import Personalize from "./personalize";
 import { toast } from "src/components/toast";
-import { listErrors, isEmail } from "src/helpers/utils.service";
+import { listErrors, isEmail, scrollToTop } from "src/helpers/utils.service";
+import Modal from "src/components/modal";
 
 const Calculate = () => {
   const [center, setCenter] = useState({ lat: 14.599512, lng: 120.984222 });
   const [place, setPlace] = useState();
   const [personalizeDone, setPersonalizeDone] = useState(false);
   const [area, setArea] = useState(0);
+  const [openModal, setCloseModal] = useState(true);
 
   const [data, setData] = useState({
     first_name: "",
@@ -22,20 +24,25 @@ const Calculate = () => {
     estimate_monthly_bill: "",
   });
 
+  const setCenterMap = (placeVal) => {
+    const lat = placeVal?.geometry?.location?.lat();
+    const lng = placeVal?.geometry?.location?.lng();
+    setCenter({
+      lat: lat,
+      lng: lng,
+    });
+  };
+
   const { ref } = usePlacesWidget({
-    onPlaceSelected: (place, inputRef, autocomplete) => {
-      setPlace(place);
+    onPlaceSelected: async (place) => {
+      await setPlace(place);
+      setCenterMap(place);
     },
   });
 
   const handleSetCenter = () => {
     if (place) {
-      const lat = place?.geometry?.location?.lat();
-      const lng = place?.geometry?.location?.lng();
-      setCenter({
-        lat: lat,
-        lng: lng,
-      });
+      setCenterMap(place);
     }
   };
 
@@ -64,6 +71,7 @@ const Calculate = () => {
         .then(() => {
           setPersonalizeDone(true);
           toast.success("Successfully sent your contact details");
+          scrollToTop();
         })
         .catch((err) => {
           toast.error(listErrors(err));
@@ -75,6 +83,7 @@ const Calculate = () => {
     <>
       {!personalizeDone ? (
         <>
+          {openModal && <Modal onClose={() => setCloseModal(false)} />}
           <Section title={"Let’s calculate your savings!"} marginTop={"lg"}>
             <div className="w-4/12 ">
               <div className="flex rounded-md border mt-6">
@@ -89,7 +98,7 @@ const Calculate = () => {
                   onClick={() => handleSetCenter()}
                   className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none"
                 >
-                  Search
+                  Go
                 </button>
               </div>
             </div>
