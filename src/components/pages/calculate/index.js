@@ -74,9 +74,9 @@ const Calculate = () => {
       setLoading(true);
       postContacts(data)
         .then(() => {
+          scrollToTop();
           setPersonalizeDone(true);
           toast.success("Successfully sent your contact details");
-          scrollToTop();
           setLoading(false);
         })
         .catch((err) => {
