@@ -21,7 +21,7 @@ import ImageContainer from "src/components/imageContainer";
 import FeedbackCarousel from "src/components/feedbackCarousel";
 import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
 import LogoContainer from "src/components/logoContainer";
-import AbsoluteDiv from "src/components/AbsoluteDiv";
+import AbsoluteDiv from "src/components/absoluteDiv";
 import Layout from "src/components/layout";
 import { useRouter } from "next/router";
 import Cta from "src/components/cta";
