@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { usePlacesWidget } from "react-google-autocomplete";
+import { useRouter } from "next/router";
 
 const Hero = () => {
+  const router = useRouter();
+  const [place, setPlace] = useState({});
+
+  const { ref } = usePlacesWidget({
+    onPlaceSelected: async (place) => {
+      setPlace(place);
+    },
+  });
+
+  const handleGoCalculate = () => {
+    const lat = place?.geometry?.location?.lat();
+    const lng = place?.geometry?.location?.lng();
+
+    return router.push({
+      pathname: "/calculate",
+      query: { address: place?.formatted_address, lat, lng },
+    });
+  };
+
   return (
     <>
       <section id="image" className="w-full bg-center bg-no-repeat bg-cover">
@@ -17,7 +38,6 @@ const Hero = () => {
               Lower your monthly electric bills by going solar now! Know how
               much <br /> you can save through our solar calculator.
             </p>
-
             <div>
               <div className="flex rounded-md  mt-6">
                 <input
@@ -26,8 +46,12 @@ const Hero = () => {
                   id="email"
                   className="font-manrope block w-6/12 xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none "
                   placeholder="Your address"
-                ></input>
-                <button className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none">
+                  ref={ref}
+                />
+                <button
+                  onClick={handleGoCalculate}
+                  className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none"
+                >
                   Calculate savings
                 </button>
               </div>

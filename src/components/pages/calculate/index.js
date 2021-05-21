@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Section from "src/components/section";
 import Map from "src/components/map";
 import PersonalizeCard from "src/components/personalizeCard";
@@ -9,6 +9,7 @@ import Personalize from "./personalize";
 import { toast } from "src/components/toast";
 import { listErrors, isEmail, scrollToTop } from "src/helpers/utils.service";
 import Modal from "src/components/modal";
+import { useRouter } from "next/router";
 
 const Calculate = () => {
   const [center, setCenter] = useState({ lat: 14.599512, lng: 120.984222 });
@@ -17,6 +18,8 @@ const Calculate = () => {
   const [area, setArea] = useState(0);
   const [openModal, setCloseModal] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const [data, setData] = useState({
     first_name: "",
@@ -83,6 +86,15 @@ const Calculate = () => {
     }
   };
 
+  useEffect(() => {
+    if (router?.query?.lat && router?.query.lng) {
+      setCenter({
+        lat: parseInt(router?.query?.lat),
+        lng: parseInt(router?.query?.lng),
+      });
+    }
+  }, [router]);
+
   return (
     <>
       {!personalizeDone ? (
@@ -94,6 +106,7 @@ const Calculate = () => {
                 <input
                   type="text"
                   name="mapAddress"
+                  defaultValue={router?.query?.address || ""}
                   ref={ref}
                   placeholder="Your address"
                   className="font-manrope block w-full xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none"
