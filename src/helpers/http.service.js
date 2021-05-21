@@ -16,8 +16,14 @@ export const httpConfig = (accessToken = "") => {
   return config;
 };
 
-export const getUrl = (url) => {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+export const getUrl = (url, urlType) => {
+  const baseUrlMain = process.env.NEXT_PUBLIC_API_URL;
+  const baseUrlSolax = process.env.NEXT_PUBLIC_SOLAX_CLOUD_API_URL;
+
+  let baseUrl;
+  if (urlType === "solax") baseUrl = baseUrlSolax;
+  else baseUrl = baseUrlMain;
+
   return `${baseUrl}${url}`;
 };
 
@@ -50,4 +56,11 @@ export const http = {
   get: (url, accessToken, config) => get(getUrl(url), accessToken, config),
   post: (url, payload, accessToken, config) =>
     post(getUrl(url), payload, accessToken, config),
+};
+
+export const httpSolax = {
+  get: (url, accessToken, config) =>
+    get(getUrl(url, "solax"), accessToken, config),
+  post: (url, payload, accessToken, config) =>
+    post(getUrl(url, "solax"), payload, accessToken, config),
 };

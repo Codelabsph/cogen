@@ -1,6 +1,7 @@
 import React from "react";
 import LineTop from "public/assets/linetop.svg";
 import LineBottom from "public/assets/linebottom.svg";
+import Section from "src/components/section"
 
 const LogoContainer = ({ img }) => {
   return (

@@ -16,6 +16,7 @@ const Calculate = () => {
   const [personalizeDone, setPersonalizeDone] = useState(false);
   const [area, setArea] = useState(0);
   const [openModal, setCloseModal] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [data, setData] = useState({
     first_name: "",
@@ -67,14 +68,17 @@ const Calculate = () => {
     if (!area && area <= 0)
       return toast.error("Please draw your calculated roof area above");
     else {
+      setLoading(true);
       postContacts(data)
         .then(() => {
           setPersonalizeDone(true);
           toast.success("Successfully sent your contact details");
           scrollToTop();
+          setLoading(false);
         })
         .catch((err) => {
           toast.error(listErrors(err));
+          setLoading(false);
         });
     }
   };
@@ -112,7 +116,7 @@ const Calculate = () => {
               data={data}
               handleOnChange={handleOnChange}
               handleSave={handleSave}
-              disabledButton={area < 0}
+              loading={loading}
             />
           </Section>
         </>

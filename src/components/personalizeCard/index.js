@@ -1,8 +1,9 @@
 import React from "react";
 import Input from "src/components/form/input";
 import Buttons from "src/components/buttons";
+import LoaderSpinner from "src/components/loaderSpinner";
 
-const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
+const PersonalizeCard = ({ data, handleOnChange, handleSave, loading }) => {
   return (
     <div className="relative  border-gray-200 rounded-xl pb-36 border-2 p-16 xxs:p-4 mx-auto shadow-lg overflow-hidden w-full    xxs:w-full">
       <div className="xxs:hidden">
@@ -51,6 +52,7 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
                 value={data?.first_name}
                 onChange={handleOnChange}
                 name="first_name"
+                disabled={loading}
               />
               <Input
                 marginBottom={"xs"}
@@ -61,6 +63,7 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
                 value={data?.last_name}
                 onChange={handleOnChange}
                 name="last_name"
+                disabled={loading}
               />
             </div>
             <div className=" mb-2">
@@ -73,6 +76,7 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
                 value={data?.email}
                 onChange={handleOnChange}
                 name="email"
+                disabled={loading}
               />
             </div>
             <div className=" w-1/2 mb-2 xxs:w-full">
@@ -85,19 +89,24 @@ const PersonalizeCard = ({ data, handleOnChange, handleSave }) => {
                 value={data?.estimate_monthly_bill}
                 onChange={handleOnChange}
                 name="estimate_monthly_bill"
+                disabled={loading}
               />
             </div>
-            <Buttons
-              text={"Personalize"}
-              id={"personalize"}
-              paddingY={"xs"}
-              btnColor={"primary"}
-              textColor={"white"}
-              width={"xs"}
-              border="xs"
-              shadows
-              onClick={handleSave}
-            />
+            {loading ? (
+              <LoaderSpinner />
+            ) : (
+              <Buttons
+                text={"Personalize"}
+                id={"personalize"}
+                paddingY={"xs"}
+                btnColor={"primary"}
+                textColor={"white"}
+                width={"xs"}
+                border="xs"
+                shadows
+                onClick={handleSave}
+              />
+            )}
           </div>
         </div>
       </div>

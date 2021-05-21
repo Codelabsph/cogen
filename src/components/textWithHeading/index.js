@@ -1,10 +1,10 @@
 import React from "react";
 
-const TextWithHeading = ({ title, content }) => {
+const TextWithHeading = ({ label, content }) => {
   return (
     <div className="wrapper">
-      <h4 className="text-2xl text-black font-bold">{title}</h4>
-      <p className="my-2 leading-relaxed">{content}</p>
+      <h4 className="text-2xl text-black font-bold">{content}</h4>
+      <p className="my-2 leading-relaxed">{label}</p>
     </div>
   );
 };

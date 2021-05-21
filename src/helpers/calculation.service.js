@@ -33,3 +33,18 @@ export const equivalentLitersOfDiesel = (area) => {
     liters_of_diesel_emission_factor * carbonEmissionSaved(area)
   ).toFixed(2);
 };
+
+export const estimateMonthlySavings = (val = 0) => {
+  const mutliplier = 2;
+  return Number(val * mutliplier).toFixed(2);
+};
+
+export const co2Reduction = (val = 0) => {
+  const mutliplier = 1.1;
+  return Number(val * mutliplier).toFixed(2);
+};
+
+export const estimateMonthlySavingsFromApi = (val) => {
+  const mutliplier = 4.5;
+  return Number(val * mutliplier).toFixed(2);
+};

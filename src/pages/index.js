@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Footer from "src/components/footer";
 import Navbar from "src/components/navbar";
 import Hero from "src/components/hero";
@@ -16,16 +16,40 @@ import IconJfyThree from "public/assets/icon-jfy-three.svg";
 import IconJfyFour from "public/assets/icon-jfy-four.svg";
 import SimpleCard from "src/components/simpleCard";
 import ClickableCards from "src/components/clickableCards";
-import ColumnCards from "src/components/columnCards";
+import ProjectDetails from "src/components/projectDetails";
 import ImageContainer from "src/components/imageContainer";
 import FeedbackCarousel from "src/components/feedbackCarousel";
 import FeedbackCarouselItem from "src/components/feedbackCarouselItem";
 import LogoContainer from "src/components/logoContainer";
 import AbsoluteDiv from "src/components/AbsoluteDiv";
-import Buttons from "src/components/buttons";
 import Layout from "src/components/layout";
+import { useRouter } from "next/router";
+import Cta from "src/components/cta";
+import { getRealTimeInfo } from "src/helpers/api.service";
+import { estimateMonthlySavings } from "src/helpers/calculation.service";
 
 const HomePage = () => {
+  const router = useRouter();
+  const handleRouting = (to) => {
+    return router.push(to);
+  };
+
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    getRealTimeInfo()
+      .then((res) => {
+        setData(res?.data);
+      })
+      .catch((err) => {
+        console.log(err?.response);
+      });
+  }, []);
+
+  const estimateMonthlySavingsVal = useMemo(() => {
+    return estimateMonthlySavings(data?.result?.yieldtotal);
+  }, [data]);
+
   return (
     <Layout siteConfig={{ name: "Index" }}>
       <Navbar />
@@ -66,7 +90,7 @@ const HomePage = () => {
         <div
           class="w-1/2  sm:w-full xxs:w-full xs:w-full"
           id="welcomeImgSection"
-        ></div>
+        />
       </Section>
       <AbsoluteDiv height={"md"} />
       <Section title={"How to save"} bgColor={"lightGrey"}>
@@ -107,7 +131,34 @@ const HomePage = () => {
       </Section>
       <AbsoluteDiv height={"lg"} />
       <Section title={"Your Co-owning Opportunity"} bgColor="lightGrey">
-        <ColumnCards />
+        <ProjectDetails
+          imageLink="/assets/img/featureImg.jpeg"
+          details="Solar savings are calculated using roof size and shape, shaded roof areas, local weather, local electricity prices, solar costs, and estimated incentives over time. Using a sample address, take a look at the detailed estimate Project Sunroof can give you."
+          title="Mandaluyong Project"
+          subTitle="Installed on June 24, 2020"
+          specsList={[
+            {
+              content: "5.0 kW",
+              label: "System size",
+            },
+            {
+              content: "161.10 kWh",
+              label: "Monthly yield",
+            },
+            {
+              content: `P ${estimateMonthlySavingsVal}`,
+              label: "Estimated Monthly Savings",
+            },
+            {
+              content: "3.51 Mwh",
+              label: "Total Yield",
+            },
+          ]}
+          buttonLabel={"Co-Own"}
+          buttonClick={() => handleRouting("/coOwn")}
+          linkLabel="Check my Property"
+          link="/calculate"
+        />
       </Section>
       <Section title={"Selected Sites"}>
         <ImageContainer
@@ -159,20 +210,11 @@ const HomePage = () => {
       </Section>
       <LogoContainer />
       <Section bgColor="primary" marginStyle="my-0">
-        <div className="h-97 w-full flex justify-center flex-col items-center text-center space-y-8">
-          <h1 className="text-7xl z-50 font-bold font-playfair tracking-widest  text-white sm:text-base md:text-2xl lg:text-7xl xxs:text-3xl">
-            Let’s discover your solar <br /> saving potential!
-          </h1>
-          <Buttons
-            text={"Check my property"}
-            id={"Checkproperty"}
-            paddingY={"xs"}
-            btnColor={"white"}
-            textColor={"primary"}
-            width={"lg"}
-            border="xs"
-          />
-        </div>
+        <Cta
+          title={"Let’s discover your solar  saving potential!"}
+          buttonTitle="Check my property"
+          buttonClick={() => handleRouting("/calculate")}
+        />
       </Section>
       <Footer />
     </Layout>

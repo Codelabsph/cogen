@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Section from "src/components/section";
-import Buttons from "src/components/buttons";
 import IconWithText from "src/components/iconWithText";
 import Hand2Icon from "public/assets/hand2-icon.svg";
 import ClockIcon from "public/assets/clock-icon.svg";
@@ -16,10 +15,41 @@ import HandDraw from "public/assets/hand-draw.svg";
 import Co2Icon from "public/assets/co2-icon.svg";
 import SmallCards from "src/components/smallcards";
 import WithProgressBar from "src/components/withProgressBar";
-import CardPreview from "src/components/cardPreview";
-import NextCardPreview from "src/components/nextCardPReview";
+import ProjectDetails from "src/components/projectDetails";
+import Cta from "src/components/cta";
+import { useRouter } from "next/router";
+import { getRealTimeInfo } from "src/helpers/api.service";
+import {
+  co2Reduction,
+  estimateMonthlySavingsFromApi,
+} from "src/helpers/calculation.service";
 
 const CoOwn = () => {
+  const router = useRouter();
+  const handleRouting = (to) => {
+    return router.push(to);
+  };
+
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    getRealTimeInfo()
+      .then((res) => {
+        setData(res?.data);
+      })
+      .catch((err) => {
+        console.log(err?.response);
+      });
+  }, []);
+
+  const co2ReductionVal = useMemo(() => {
+    return co2Reduction(data?.result?.yieldtotal);
+  }, [data]);
+
+  const estimateMonthlySavingsFromApiVal = useMemo(() => {
+    return estimateMonthlySavingsFromApi(data?.result?.yieldtotal);
+  }, [data]);
+
   return (
     <>
       <Section />
@@ -118,10 +148,122 @@ const CoOwn = () => {
         </div>
       </Section>
       <Section>
-        <CardPreview />
+        <ProjectDetails
+          cogenShade
+          mainTitle="Co-ownwer Slots"
+          imageLink="/assets/img/case-card.png"
+          detailsListCol1={[
+            {
+              content: "Mandaluyong City",
+              label: "location",
+            },
+            {
+              content: "Residential",
+              label: "Classification",
+            },
+            {
+              content: "100sqm",
+              label: "Roof size",
+            },
+            {
+              content: "Grid-tied solar PV System",
+              label: "Panel Type",
+            },
+          ]}
+          detailsListCol2={[
+            {
+              content: "June 24 2020",
+              label: "Installation Date",
+            },
+            {
+              content: "Php 2,500 +",
+              label: "Average Monthly Bill",
+            },
+            {
+              content: "5kW",
+              label: "Stystem size",
+            },
+            {
+              content: "Co-Generating",
+              label: "Status",
+            },
+          ]}
+          specsList={[
+            {
+              content: `${data?.result?.yieldtotal || 0} MWh`,
+              label: "Total yield",
+            },
+            {
+              content: `${data?.result?.yieldtoday || 0} KWh`,
+              label: "Yield Today",
+            },
+            {
+              content: `P ${estimateMonthlySavingsFromApiVal}`,
+              label: "Monthly savings",
+            },
+            {
+              content: `${co2ReductionVal}t`,
+              label: "CO2 Reduction",
+            },
+          ]}
+        />
       </Section>
       <Section>
-        <NextCardPreview />
+        <ProjectDetails
+          cogenShade
+          mainTitle="Co-ownwer Slots"
+          imageLink="/assets/img/case-card2.png"
+          detailsListCol1={[
+            {
+              content: "Mandaluyong City",
+              label: "location",
+            },
+            {
+              content: "Residential",
+              label: "Classification",
+            },
+            {
+              content: "100sqm",
+              label: "Roof size",
+            },
+            {
+              content: "Grid-tied solar PV System",
+              label: "Panel Type",
+            },
+          ]}
+          detailsListCol2={[
+            {
+              content: "June 24 2020",
+              label: "Installation Date",
+            },
+            {
+              content: "Php 2,500 +",
+              label: "Average Monthly Bill",
+            },
+            {
+              content: "5kW",
+              label: "Stystem size",
+            },
+            {
+              content: "Co-Generating",
+              label: "Status",
+            },
+          ]}
+          specsList={[
+            {
+              label: "Total yield",
+            },
+            {
+              label: "Monthly yield",
+            },
+            {
+              label: "Monthly savings",
+            },
+            {
+              label: "Total Reduction",
+            },
+          ]}
+        />
       </Section>
       <Section type="fluid">
         <FeedbackCarousel>
@@ -159,20 +301,11 @@ const CoOwn = () => {
       </Section>
       <LogoContainer />
       <Section bgColor="primary" marginStyle="my-0">
-        <div className="h-97 w-full flex justify-center flex-col items-center text-center space-y-8">
-          <h1 className="text-7xl z-50 font-bold font-playfair tracking-widest  text-white sm:text-base md:text-2xl lg:text-7xl xxs:text-3xl">
-            Let’s discover your solar <br /> saving potential!
-          </h1>
-          <Buttons
-            text={"Check my property"}
-            id={"Checkproperty"}
-            paddingY={"xs"}
-            btnColor={"white"}
-            textColor={"primary"}
-            width={"lg"}
-            border="xs"
-          />
-        </div>
+        <Cta
+          title={"Let’s discover your solar  saving potential!"}
+          buttonTitle="Check my property"
+          buttonClick={() => handleRouting("/calculate")}
+        />
       </Section>
     </>
   );
