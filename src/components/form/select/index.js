@@ -8,7 +8,8 @@ const Select = ({
   value,
   name,
   options,
-  defaultValue
+  defaultValue,
+  disabled,
 }) => {
   return (
     <>
@@ -27,6 +28,7 @@ const Select = ({
           value={value && value}
           placeholder={placeholder}
           defaultValue={defaultValue && defaultValue}
+          disabled={disabled && disabled}
         >
           {options &&
             options?.map((val, key) => {

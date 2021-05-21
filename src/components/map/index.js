@@ -4,9 +4,9 @@ import { DrawingManager } from "react-google-maps/lib/components/drawing/Drawing
 
 const Map = compose(
   withProps({
-    loadingElement: <div style={{ height: `100%` }} />,
+    loadingElement: <div style={{ height: '100%' }} />,
     containerElement: <div style={{ height: "600px" }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    mapElement: <div style={{ height: '100%' }} />,
   }),
   withGoogleMap
 )((props) => {

@@ -9,6 +9,7 @@ const Input = ({
   onChange,
   value,
   name,
+  disabled,
 }) => {
   const marginBottomStyle =
     marginBottom === "xs" ? "mb-6 md:mb-0" : "sm" ? "mb-10 md:mb-2" : "";
@@ -31,6 +32,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={onChange && onChange}
         value={value && value}
+        disabled={disabled && disabled}
       />
     </div>
   );

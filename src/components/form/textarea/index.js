@@ -2,13 +2,13 @@ import React from "react";
 
 const Textarea = ({
   id,
-
   placeholder,
   label,
   onChange,
   value,
   name,
   rows = 6,
+  disabled,
 }) => {
   return (
     <>
@@ -26,6 +26,7 @@ const Textarea = ({
         value={value && value}
         placeholder={placeholder && placeholder}
         className=" p-4 block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
+        disabled={disabled && disabled}
       />
     </>
   );

@@ -8,5 +8,5 @@ export function isEmail(email) {
 }
 
 export const scrollToTop = () => {
-  return window.scrollTo(0, 0);
+  return window && window?.scrollTo(0, 0);
 };

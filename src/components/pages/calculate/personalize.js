@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "src/components/footer";
-import Navbar from "src/components/navbar";
 import Section from "src/components/section";
 import Buttons from "src/components/buttons";
 import IconWithText from "src/components/iconWithText";
