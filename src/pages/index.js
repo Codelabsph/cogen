@@ -25,6 +25,7 @@ import AbsoluteDiv from "src/components/absoluteDiv";
 import Layout from "src/components/layout";
 import { useRouter } from "next/router";
 import Cta from "src/components/cta";
+import ArrowIcon from "public/assets/arrow-icon.svg";
 import { getRealTimeInfo } from "src/helpers/api.service";
 import { estimateMonthlySavings } from "src/helpers/calculation.service";
 
@@ -53,6 +54,7 @@ const HomePage = () => {
   return (
     <Layout siteConfig={{ name: "Index" }}>
       <Navbar />
+     
       <Hero />
       <Section margin={"s"} />
       <Section
