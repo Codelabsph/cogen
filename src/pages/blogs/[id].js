@@ -38,7 +38,7 @@ const BlogContent = ({ data, blogData }) => {
               <div className="w-1/4">
                 <div className="text-2xl">
                   <h5 className="font-playfair">{data?.author?.name}</h5>
-                  <small className="text-sm">position</small>
+                  <small className="text-sm">{data?.author?.position}</small>
                 </div>
               </div>
               <div className="w-3/4">

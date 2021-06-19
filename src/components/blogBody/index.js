@@ -3,6 +3,7 @@ import FbIcon2 from "public/assets/fb-icon2.svg";
 import BlogSubHeading from "src/components/blogSubHeading";
 import marked from "marked";
 import { formatDate } from "src/helpers/utils.service";
+
 const BlogBody = ({ ...props }) => {
   return (
     <div className="flex justify-end my-20">
