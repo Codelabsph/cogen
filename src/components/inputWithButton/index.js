@@ -13,7 +13,7 @@ const InputWithButton = ({
     <div class="relative text-gray-600 focus-within:text-gray-400">
       <input
         type="search"
-        class="py-2 text-sm text-white bg-gray-800 rounded-md pl-10 w-full  focus:outline-none focus:bg-gray-500 focus:text-gray-900"
+        class="py-2 text-sm text-white bg-gray-800 rounded-md pl-2 w-full  focus:outline-none focus:bg-gray-500 focus:text-gray-900"
         autoComplete={autoComplete && autoComplete}
         placeholder={placeholder && placeholder}
         name={name && name}

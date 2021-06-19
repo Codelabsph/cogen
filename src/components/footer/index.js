@@ -65,7 +65,7 @@ const Footer = () => {
               href="#"
               className="mt-10 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
             >
-              Copyright © 2020 Landify UI Kit.
+            <div className="inline-block"> <FooterLink linkLabel="Copyright © 2020  CoGen.energy" to="/" /></div> 
             </div>
             <div
               href="#"
@@ -94,7 +94,7 @@ const Footer = () => {
               Co-own
             </div>
             <FooterLink linkLabel="Overview" />
-            <FooterLink linkLabel=" Get Started" />
+            <a className="mt-2 block text-primary hover:text-gray-100 text-sm font-medium duration-700" href="/">Get Started</a>
           </div>
           <div className="p-5 w-1/2 sm:w-4/12 md:w-1/5 xxs:w-full"></div>
           <div className="p-5 w-1/2 sm:w-4/12 md:w-1/5 xxs:w-full">

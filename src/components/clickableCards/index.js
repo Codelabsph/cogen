@@ -83,8 +83,7 @@ const ClickableCards = () => {
                       options
                     </h5>
                     <p className="mt-2 text-base leading-6 text-black  text-justify">
-                      Compare loan, lease, and purchase options for your solar
-                      panels based on your results.
+                    Choose between our pay-per-use or outright purchase package
                     </p>
                   </div>
                 </div>

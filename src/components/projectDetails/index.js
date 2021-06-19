@@ -47,7 +47,7 @@ const ProjectDetails = ({
               <span className="font-normal ml-5 xxs:ml-0">{subTitle}</span>
             </h2>
           )}
-          <div className="flex flex-row py-4 space-x-14 xxs:flex-col xxs:space-x-0">
+          <div className="flex flex-row pt-2 space-x-14 xxs:flex-col xxs:space-x-0">
             <div className="">
               {detailsListCol1?.map((val) => {
                 return (
@@ -64,7 +64,7 @@ const ProjectDetails = ({
             </div>
           </div>
           {specsList && (
-            <div className="flex flex-row my-4 xxs:flex-col w-full text-center space-x-16 xxs:space-x-0">
+            <div className="flex flex-row my-2 xxs:flex-col w-full text-center space-x-16 xxs:space-x-0">
               {specsList &&
                 specsList.map((val) => {
                   return (

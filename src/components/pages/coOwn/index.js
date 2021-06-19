@@ -61,17 +61,20 @@ const CoOwn = () => {
       >
         <IconWithText
           icon={<Hand2Icon />}
-          title="Php 20,000"
+          currency="&#8369;"
+          title=" 20,000"
           paragraph="Minimum investment"
         />
         <IconWithText
+         currency="&#8369;"
           icon={<Up2Icon />}
-          title="Php 20,000"
+          title=" 20,000"
           paragraph="Minimum investment"
         />
         <IconWithText
+         currency="&#8369;"
           icon={<ClockIcon />}
-          title="Php 20,000"
+          title=" 20,000"
           paragraph="Minimum investment"
         />
       </Section>
@@ -198,7 +201,7 @@ const CoOwn = () => {
               label: "Yield Today",
             },
             {
-              content: `P ${estimateMonthlySavingsFromApiVal}`,
+              content: `₱${estimateMonthlySavingsFromApiVal}`,
               label: "Monthly savings",
             },
             {

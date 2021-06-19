@@ -95,7 +95,7 @@ const Section = ({
         className={`w-full mx-auto px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-56  ${marginStyle} ${bgStyle} ${paddingStyle} ${TopMargin}`}
       >
         {wave && wave}
-        <h1 className="text-7xl z-50 mt-20 font-bold font-playfair tracking-widest  sm:text-base md:text-2xl lg:text-6xl xxs:text-3xl">
+        <h1 className="text-7xl z-50 mt-20 font-bold font-playfair  sm:text-base md:text-2xl lg:text-6xl xxs:text-3xl">
           <h1 className="text-cogengreen text-lg font-poppins tracking-lg  uppercase mb-20">
             {extras && extras}
           </h1>
@@ -104,7 +104,7 @@ const Section = ({
 
         <p className="text-lg font-poppins my-8">{subTitle && subTitle}</p>
         <div
-          className={`flex align-center  md:flex-row sm:flex-col xxs:flex-col my-8  font-poppins ${flexRows} ${spacing} xxs:text-center`}
+          className={`flex align-center  md:flex-row sm:flex-col xxs:flex-col  font-poppins ${flexRows} ${spacing} xxs:text-center`}
         >
           {React.Children.map(children, (child) => (
             <>{React.cloneElement(child)}</>
