@@ -14,6 +14,8 @@ export const parseParams = (options) => {
 export const ENDPOINTS = {
   CONTACT: () => "/contacts",
   GET_REALTIME_INFO: (query) => `/getRealtimeInfo.do${parseParams(query)}`,
+  BLOGS: (query) => `/blogs${parseParams(query)}`,
+  BLOG: (id) => `/blogs/${id}`,
 };
 
 export const postContacts = (payload) => {
@@ -28,4 +30,12 @@ export const getRealTimeInfo = (query) => {
   return httpSolax.get(
     ENDPOINTS.GET_REALTIME_INFO({ ...query, ...queryStatic })
   );
+};
+
+export const getBlogs = (query) => {
+  return http.get(ENDPOINTS.BLOGS(query));
+};
+
+export const getBlog = (id) => {
+  return http.get(ENDPOINTS.BLOG(id));
 };

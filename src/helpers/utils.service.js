@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import React from 'react'
+import moment from "moment";
 
 export const listErrors = (err) => {
   const error = err?.response?.data?.message;
@@ -12,4 +11,13 @@ export function isEmail(email) {
 
 export const scrollToTop = () => {
   return window && window?.scrollTo(0, 0);
+};
+
+export const getImageUrl = (uri) => {
+  const baseUrlMain = process.env.NEXT_PUBLIC_API_URL;
+  return `${baseUrlMain}${uri}`;
+};
+
+export const formatDate = (date, format) => {
+  return moment(date).format(format || "MMMM Do YYYY");
 };
