@@ -18,7 +18,7 @@ const BlogHero = ({ subHeading, title, description, ...props }) => {
         className="w-full bg-center bg-no-repeat bg-cover"
         src={getImageUrl(props?.cover?.formats?.large?.url)}
       />
-      <div className="w-full mx-auto px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-56 h-screen xxl:vh-20 bg-opacity-10 bg-black flex items-center">
+      <div className="w-full mx-auto px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-56 xxl:vh-20 bg-opacity-10 bg-black flex items-center">
         <div className="bg-white py-12 px-56 xxs:mx-10 absolute bottom-0 left-0  xxs:px-12">
           <h5 className="text-gray-400 text-sm font-poppins tracking-widest font-semibold uppercase mb-6 sm:text-sm md:text-lg lg:text-sm xs:text-lg xxs:text-3xl">
             {subHeading}
