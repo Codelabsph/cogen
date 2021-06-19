@@ -54,7 +54,7 @@ const HomePage = () => {
   return (
     <Layout siteConfig={{ name: "Index" }}>
       <Navbar />
-     
+
       <Hero />
       <Section margin={"s"} />
       <Section
@@ -96,7 +96,34 @@ const HomePage = () => {
       </Section>
       <AbsoluteDiv height={"md"} />
       <Section title={"How to save"} bgColor={"lightGrey"}>
-        <ClickableCards />
+        <ClickableCards
+          data={[
+            {
+              number: 1,
+              title: "Search",
+              subtitle: "Search for your home",
+              description:
+                "We use Google Earth imagery to analyze your roof shape and local weather patterns to create a personalized solar plan.",
+              img: "/assets/img/g1.jpg",
+            },
+            {
+              number: 2,
+              title: "Personalize",
+              subtitle: "Personalize your solar analysis",
+              description:
+                "Adjust your electric bill to fine-tune your savings estimate and the recommended number of solar panels for your home.",
+              img: "/assets/img/g2.jpg",
+            },
+            {
+              number: 3,
+              title: "Select",
+              subtitle: "Compare and select finance options",
+              description:
+                "Choose between our pay-per-use or outright purchase package",
+              img: "/assets/img/g3.jpg",
+            },
+          ]}
+        />
       </Section>
       <Section>
         <FullCard />
