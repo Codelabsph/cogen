@@ -3,17 +3,17 @@ import Section from "src/components/section";
 import Map from "src/components/map";
 import PersonalizeCard from "src/components/personalizeCard";
 import MapDetails from "src/components/mapDetails";
-import { usePlacesWidget } from "react-google-autocomplete";
 import { postContacts } from "src/helpers/api.service";
 import Personalize from "./personalize";
 import { toast } from "src/components/toast";
 import { listErrors, isEmail, scrollToTop } from "src/helpers/utils.service";
 import Modal from "src/components/modal";
 import { useRouter } from "next/router";
+import AutocompletePlaces from "src/components/form/autocompletePlaces";
 
 const Calculate = () => {
   const [center, setCenter] = useState({ lat: 14.599512, lng: 120.984222 });
-  const [place, setPlace] = useState();
+  const [description, setDescription] = useState("");
   const [personalizeDone, setPersonalizeDone] = useState(false);
   const [area, setArea] = useState(0);
   const [openModal, setCloseModal] = useState(true);
@@ -27,28 +27,6 @@ const Calculate = () => {
     email: "",
     estimate_monthly_bill: "",
   });
-
-  const setCenterMap = (placeVal) => {
-    const lat = placeVal?.geometry?.location?.lat();
-    const lng = placeVal?.geometry?.location?.lng();
-    setCenter({
-      lat: lat,
-      lng: lng,
-    });
-  };
-
-  const { ref } = usePlacesWidget({
-    onPlaceSelected: async (place) => {
-      await setPlace(place);
-      setCenterMap(place);
-    },
-  });
-
-  const handleSetCenter = () => {
-    if (place) {
-      setCenterMap(place);
-    }
-  };
 
   const handleOnChange = (e) => {
     const name = e?.target?.name;
@@ -89,9 +67,12 @@ const Calculate = () => {
   useEffect(() => {
     if (router?.query?.lat && router?.query.lng) {
       setCenter({
-        lat: parseInt(router?.query?.lat),
-        lng: parseInt(router?.query?.lng),
+        lat: parseFloat(router?.query?.lat),
+        lng: parseFloat(router?.query?.lng),
       });
+    }
+    if (router?.query?.address) {
+      setDescription(router?.query?.address);
     }
   }, [router]);
 
@@ -102,29 +83,18 @@ const Calculate = () => {
           {openModal && <Modal onClose={() => setCloseModal(false)} />}
           <Section title={"Let’s calculate your savings!"} marginTop={"lg"}>
             <div className="w-4/12 ">
-              <div className="flex rounded-md border mt-6">
-                <input
-                  type="text"
-                  name="mapAddress"
-                  defaultValue={router?.query?.address || ""}
-                  ref={ref}
-                  placeholder="Your address"
-                  className="font-manrope block w-full xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none"
-                />
-                <button
-                  onClick={() => handleSetCenter()}
-                  className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none"
-                >
-                  Go
-                </button>
-              </div>
+              <AutocompletePlaces
+                setSelected={setCenter}
+                inputLabel="Your address"
+                setDescription={setDescription}
+              />
             </div>
           </Section>
           <Map center={center} setArea={setArea} />
           <Section>
-            <MapDetails address={place?.formatted_address} area={area} />
+            <MapDetails address={description} area={area} />
           </Section>
-          <Section>
+          <Section margin="s">
             <PersonalizeCard
               data={data}
               handleOnChange={handleOnChange}
@@ -134,11 +104,7 @@ const Calculate = () => {
           </Section>
         </>
       ) : (
-        <Personalize
-          data={data}
-          area={area}
-          address={place?.formatted_address}
-        />
+        <Personalize data={data} area={area} address={description} />
       )}
     </>
   );
