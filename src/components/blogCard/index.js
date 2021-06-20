@@ -14,7 +14,7 @@ const BlogCard = ({ subHeading, title, description, src, ...props }) => {
   return (
     <div className="relative shadow-lg overflow-hidden blogCard">
       <img
-        className="w-full object-cover"
+        className="w-full object-cover h-full"
         src={src || defaultSrc}
         alt="Mountain"
       />
