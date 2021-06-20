@@ -4,12 +4,12 @@ import { getImageUrl } from "src/helpers/utils.service";
 
 const BlogHeading = ({ title, description, ...props }) => {
   return (
-    <section>
+    <section className="relative blogHero w-full overflow-hidden bg-cover bg-no-repeat bg-center">
       <img
         src={getImageUrl(props?.cover?.formats?.large?.url)}
-        className="w-full bg-center bg-no-repeat bg-cover"
+        className="w-full object-cover"
       />
-      <div className="w-full  px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-56 xxl:vh-20 bg-opacity-10 bg-black flex items-center">
+     
         <div className="bg-white py-12 w-10/12 pl-10  xxs:mx-10 absolute bottom-0 right-0  xxs:px-12 flex flex-start">
           <div className="float-left">
             <h5 className="text-gray-400 text-sm font-poppins tracking-widest font-semibold uppercase mb-6 sm:text-sm md:text-lg lg:text-sm xs:text-lg xxs:text-3xl">
@@ -33,7 +33,7 @@ const BlogHeading = ({ title, description, ...props }) => {
             </p>
           </div>
         </div>
-      </div>
+     
     </section>
   );
 };
