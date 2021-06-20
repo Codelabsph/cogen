@@ -12,7 +12,7 @@ const BlogBody = ({ ...props }) => {
           date={formatDate(props?.published_at)}
           author={props?.author?.name}
         />
-        {marked(props?.content)}
+        {props?.content && marked(props?.content)}
         <div className="w-full flex mx-auto justify-center space-x-4">
           <div className="flex space-x-4 items-center">
             <FbIcon2 />
