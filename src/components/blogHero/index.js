@@ -13,9 +13,9 @@ const BlogHero = ({ subHeading, title, description, ...props }) => {
   };
 
   return (
-    <section>
+    <section className="relative h-screen">
       <img
-        className="w-full bg-center bg-no-repeat bg-cover"
+        className="w-full bg-center bg-no-repeat bg-cover max-w-full"
         src={getImageUrl(props?.cover?.formats?.large?.url)}
       />
       <div className="w-full mx-auto px-6 sm:px-8 lg:px-16 xl:px-40 2xl:px-56 xxl:vh-20 bg-opacity-10 bg-black flex items-center">

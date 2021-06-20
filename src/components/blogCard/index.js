@@ -12,9 +12,9 @@ const BlogCard = ({ subHeading, title, description, src, ...props }) => {
   };
 
   return (
-    <div className="relative shadow-lg overflow-hidden">
+    <div className="relative shadow-lg overflow-hidden blogCard">
       <img
-        className="w-full object-fit"
+        className="w-full object-cover"
         src={src || defaultSrc}
         alt="Mountain"
       />
