@@ -38,25 +38,9 @@ const Hero = () => {
                 setSelected={setSelected}
                 setDescription={setDescription}
                 inputLabel="Your address"
-                buttonlabel="Calculate"
+                buttonlabel="Calculate savings"
                 buttonAction={handleGoCalculate}
               />
-              {/* <div className="flex rounded-md  mt-6">
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  className="font-manrope block w-6/12 xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none "
-                  placeholder="Your address"
-                  ref={ref}
-                />
-                <button
-                  onClick={handleGoCalculate}
-                  className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none"
-                >
-                  Calculate savings
-                </button>
-              </div> */}
             </div>
           </div>
         </div>
