@@ -66,13 +66,13 @@ const CoOwn = () => {
           paragraph="Minimum investment"
         />
         <IconWithText
-         currency="&#8369;"
+          currency="&#8369;"
           icon={<Up2Icon />}
           title=" 20,000"
           paragraph="Minimum investment"
         />
         <IconWithText
-         currency="&#8369;"
+          currency="&#8369;"
           icon={<ClockIcon />}
           title=" 20,000"
           paragraph="Minimum investment"
@@ -84,7 +84,7 @@ const CoOwn = () => {
             to clean energy. You can help accelerate the energy transition by helping our fellow Filipinos have solar installations on their properties.  Earn a monthly return from the production of the co-generated system while helping our fellow Filipinos and the environment by co-owning now."
       />
       <Section title="How the Co-ownership Program  works">
-        <div class="flex justify-center space-x-16 xxs:space-x-0 xxs:flex-col py-10">
+        <div className="flex justify-center space-x-16 xxs:space-x-0 xxs:flex-col py-10">
           <SmallCards
             path={"assets/img/card-1.png"}
             title={"Search"}

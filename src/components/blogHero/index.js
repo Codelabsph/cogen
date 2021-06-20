@@ -44,7 +44,6 @@ const BlogHero = ({ subHeading, title, description, ...props }) => {
               </div>
             </div>
           </p>
-          <div></div>
         </div>
       </div>
     </section>

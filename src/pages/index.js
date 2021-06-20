@@ -54,7 +54,6 @@ const HomePage = () => {
   return (
     <Layout siteConfig={{ name: "Index" }}>
       <Navbar />
-
       <Hero />
       <Section margin={"s"} />
       <Section
@@ -72,7 +71,7 @@ const HomePage = () => {
         />
       </Section>
       <Section padding={"s"}>
-        <div class="w-1/2 sm:w-full xxs:w-full xs:w-full">
+        <div className="w-1/2 sm:w-full xxs:w-full xs:w-full">
           <IconWithText
             icon={<IconOne />}
             title="Co-owning and Co-generating"
@@ -90,7 +89,7 @@ const HomePage = () => {
           />
         </div>
         <div
-          class="w-1/2  sm:w-full xxs:w-full xs:w-full"
+          className="w-1/2  sm:w-full xxs:w-full xs:w-full"
           id="welcomeImgSection"
         />
       </Section>

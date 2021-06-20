@@ -4,7 +4,7 @@ import Wave2 from "public/assets/fullCardsWaves2.svg";
 
 const FormCards = () => {
   return (
-    <div class="relative w-full border-gray-200 rounded-xl border-2 p-16 mx-auto shadow-lg overflow-hidden">
+    <div className="relative w-full border-gray-200 rounded-xl border-2 p-16 mx-auto shadow-lg overflow-hidden">
       <div className="z-50 absolute top-0 right-0">
         <Wave1 />
       </div>
@@ -20,7 +20,7 @@ const FormCards = () => {
           energy transition.
           <br /> Help the environment while earning money through{" "}
           <span>
-            <a class="text-cogengreen font-semibold" href="">
+            <a className="text-cogengreen font-semibold" href="">
               our co-ownership program
             </a>
           </span>

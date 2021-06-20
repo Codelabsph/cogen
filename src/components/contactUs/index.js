@@ -3,7 +3,7 @@ import Section from "src/components/section";
 import WaveSvgRight from "src/components/contactusWaveSvg";
 import ContactUsForm from "src/components/contactUsForm";
 
-const ContactUs = ({}) => {
+const ContactUs = () => {
   return (
     <Section sectionType={"fluid"} wave={<WaveSvgRight />}>
       <ContactUsForm />

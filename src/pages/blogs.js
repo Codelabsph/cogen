@@ -14,13 +14,6 @@ const BlogPage = ({ data }) => {
   return (
     <Layout siteConfig={{ name: "Blogs" }}>
       <Navbar />
-      {/* <Section>
-        {data?.length < 0 && (
-          <h1 className="text-2xl font-playfair leading-normal xxs:text-xl font-bold">
-            {"No Blogs post yet"}
-          </h1>
-        )}
-      </Section> */}
       {data?.length > 0 && (
         <>
           <BlogHero
@@ -31,7 +24,7 @@ const BlogPage = ({ data }) => {
           />
           <Section>
             <div>
-              <div class="grid grid-cols-3 gap-4 mx-auto xxs:grid-cols-1">
+              <div className="grid grid-cols-3 gap-4 mx-auto xxs:grid-cols-1">
                 {data?.map((val, idx) => {
                   if (idx === 0) return <></>;
                   else

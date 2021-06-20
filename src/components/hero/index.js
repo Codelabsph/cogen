@@ -1,25 +1,20 @@
 import React, { useState } from "react";
-import { usePlacesWidget } from "react-google-autocomplete";
 import { useRouter } from "next/router";
-
+import AutocompletePlaces from "src/components/form/autocompletePlaces";
+import { toast } from "src/components/toast";
 const Hero = () => {
   const router = useRouter();
-  const [place, setPlace] = useState({});
-
-  const { ref } = usePlacesWidget({
-    onPlaceSelected: async (place) => {
-      setPlace(place);
-    },
-  });
+  const [selected, setSelected] = useState();
+  const [description, setDescription] = useState("");
 
   const handleGoCalculate = () => {
-    const lat = place?.geometry?.location?.lat();
-    const lng = place?.geometry?.location?.lng();
-
-    return router.push({
-      pathname: "/calculate",
-      query: { address: place?.formatted_address, lat, lng },
-    });
+    if (!selected) {
+      toast.error("Select an address first on address dropdown");
+    } else
+      return router.push({
+        pathname: "/calculate",
+        query: { address: description, lat: selected?.lat, lng: selected?.lng },
+      });
   };
 
   return (
@@ -39,7 +34,14 @@ const Hero = () => {
               much <br /> you can save through our solar calculator.
             </p>
             <div>
-              <div className="flex rounded-md  mt-6">
+              <AutocompletePlaces
+                setSelected={setSelected}
+                setDescription={setDescription}
+                inputLabel="Your address"
+                buttonlabel="Calculate"
+                buttonAction={handleGoCalculate}
+              />
+              {/* <div className="flex rounded-md  mt-6">
                 <input
                   type="text"
                   name="email"
@@ -54,7 +56,7 @@ const Hero = () => {
                 >
                   Calculate savings
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
