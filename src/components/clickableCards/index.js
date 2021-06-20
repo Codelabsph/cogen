@@ -31,7 +31,11 @@ const ClickableCards = ({ data }) => {
                           {val?.number}
                         </span>
                       </div>
-                      <span className="tracking-widest text-white text-base uppercase">
+                      <span
+                        className={`tracking-widest  text-base uppercase ${
+                          idx === currentCardIndex ? "" : "text-white"
+                        }`}
+                      >
                         {val?.title}
                       </span>
                     </div>
