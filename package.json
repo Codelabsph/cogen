@@ -6,7 +6,6 @@
   "dependencies": {
     "@svgr/webpack": "^5.4.0",
     "axios": "^0.21.1",
-    "marked": "^2.1.1",
     "moment": "^2.29.1",
     "next": "^10.0.7",
     "nprogress": "^0.2.0",
@@ -16,6 +15,7 @@
     "react-google-maps": "^9.4.5",
     "react-helmet": "^6.1.0",
     "react-loader-spinner": "^4.0.0",
+    "react-markdown": "^6.0.2",
     "react-toastify": "^7.0.4",
     "recompose": "^0.30.0",
     "sass": "^1.32.8",
