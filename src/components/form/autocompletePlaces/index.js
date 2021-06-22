@@ -10,6 +10,7 @@ const PlacesAutocomplete = ({
   buttonAction,
   setSelected,
   setDescription,
+  border
 }) => {
   const {
     ready,
@@ -52,6 +53,8 @@ const PlacesAutocomplete = ({
         structured_formatting: { main_text, secondary_text },
       } = suggestion;
 
+
+   
       return (
         <div
           className="py-1"
@@ -72,10 +75,13 @@ const PlacesAutocomplete = ({
         </div>
       );
     });
-
+    const borders =
+    border === "yes"
+      ? "border"
+      : "";
   return (
     <div ref={ref} className="relative mb-8">
-      <div className="flex rounded-md border mt-6 h-12">
+      <div className={`flex rounded-md ${borders}  mt-6 h-12`}>
         <input
           className="font-manrope block w-full xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none"
           value={value}
@@ -86,14 +92,14 @@ const PlacesAutocomplete = ({
         {buttonlabel && (
           <button
             onClick={() => buttonAction()}
-            className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md  bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none"
+            className="inline-flex items-center font-bold  font-manrope px-7 py-4 rounded-r-md   bg-primary text-white  text-md  hover:bg-secondary hover:text-primary sm:text-sm  focus:outline-none"
           >
             {buttonlabel}
           </button>
         )}
       </div>
       <div
-        className="absolute mt-2 w-56 rounded-md shadow-lg bg-white divide-y divide-gray-100 focus:outline-none z-40"
+        className="absolute mt-4 w-60 rounded-md shadow-lg bg-white divide-y divide-gray-100  focus:outline-none z-40"
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"

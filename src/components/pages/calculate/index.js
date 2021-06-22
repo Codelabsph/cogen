@@ -83,7 +83,7 @@ const Calculate = () => {
           {openModal && <Modal onClose={() => setCloseModal(false)} />}
           <Section title={"Let’s calculate your savings!"} marginTop={"lg"}>
             <div className="w-4/12 ">
-              <AutocompletePlaces
+              <AutocompletePlaces border="yes"
                 setSelected={setCenter}
                 inputLabel="Your address"
                 setDescription={setDescription}
