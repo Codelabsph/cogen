@@ -10,7 +10,7 @@ const PlacesAutocomplete = ({
   buttonAction,
   setSelected,
   setDescription,
-  border
+  border,
 }) => {
   const {
     ready,
@@ -53,8 +53,6 @@ const PlacesAutocomplete = ({
         structured_formatting: { main_text, secondary_text },
       } = suggestion;
 
-
-   
       return (
         <div
           className="py-1"
@@ -75,15 +73,12 @@ const PlacesAutocomplete = ({
         </div>
       );
     });
-    const borders =
-    border === "yes"
-      ? "border"
-      : "";
+  const borders = border === "yes" ? "border" : "";
   return (
     <div ref={ref} className="relative mb-8">
       <div className={`flex rounded-md ${borders}  mt-6 h-12`}>
         <input
-          className="font-manrope block w-full xxs:w-full px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none"
+          className="font-manrope block w-1/2 px-3 py-2 rounded-r-none rounded-l-md sm:text-sm focus:outline-none"
           value={value}
           onChange={handleInput}
           disabled={!ready}

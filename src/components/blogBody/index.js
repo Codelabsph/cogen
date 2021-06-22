@@ -2,7 +2,7 @@ import React from "react";
 import FbIcon2 from "public/assets/fb-icon2.svg";
 import BlogSubHeading from "src/components/blogSubHeading";
 import marked from "marked";
-import { formatDate } from "src/helpers/utils.service";
+import { formatDate, fbShareLink } from "src/helpers/utils.service";
 
 const BlogBody = ({ ...props }) => {
   return (
@@ -16,7 +16,7 @@ const BlogBody = ({ ...props }) => {
         <div className="w-full flex mx-auto justify-center space-x-4">
           <div className="flex space-x-4 items-center">
             <FbIcon2 />
-            <a className="text-gray-500 font-bold text-lg" href="">
+            <a className="text-gray-500 font-bold text-lg" href={fbShareLink()}>
               Share
             </a>
           </div>

@@ -21,3 +21,10 @@ export const getImageUrl = (uri) => {
 export const formatDate = (date, format) => {
   return moment(date).format(format || "MMMM Do YYYY");
 };
+
+export const fbShareLink = () => {
+  const app_id = process.env.NEXT_PUBLIC_FACEBOOK_APP_ID;
+  if (typeof window !== "undefined")
+    return `https://www.facebook.com/dialog/share?app_id=${app_id}&href=${window?.location?.href}&display=popup`;
+  else return "";
+};

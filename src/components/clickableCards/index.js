@@ -21,7 +21,7 @@ const ClickableCards = ({ data }) => {
                 className={`flex items-center cursor-pointer justify-content-center h-2/6 ${
                   idx === currentCardIndex ? "bg-cogengreen" : "bg-green-200"
                 }`}
-                onClick={() => setcurrentCardIndex(idx)}
+                onMouseEnter={() => setcurrentCardIndex(idx)}
               >
                 <div className="p-14">
                   <div className="flex items-center flex-row xxs:flex-col ">
