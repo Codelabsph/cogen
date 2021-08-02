@@ -27,12 +27,12 @@ import {
   equivalentLitersOfDiesel,
   co2Reduction,
   estimateMonthlySavingsFromApi,
+  numberWithCommas,
 } from "src/helpers/calculation.service";
 import { useRouter } from "next/router";
 import { getRealTimeInfo } from "src/helpers/api.service";
 
-
-const Personalize = ({ data, area, address }) => {
+const Personalize = ({ data, area, address, imageCapture }) => {
   const estimatedAnnualEnergyOuputkWhVal = estimatedAnnualEnergyOuputkWh(area);
   const estimated10YearsSavingsPesoVal = estimatedAnnualSavingsPeso(area);
   const carbonEmissionSavedVal = carbonEmissionSaved(area);
@@ -84,22 +84,25 @@ const Personalize = ({ data, area, address }) => {
               </div>
               <div className="mb-8">
                 <h1 className="text-2xl font-bold font-poppins  tracking-widest  sm:text-base md:text-2xl lg:text-2xl xxs:text-2xl mb-4">
-                  P {data?.estimate_monthly_bill}
+                  ₱{numberWithCommas(data?.estimate_monthly_bill)}
                 </h1>
                 <small className="text-xl">monthly average bill</small>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-1/4 lg:w-1/2  md:w-full xxs:w-full sm:w-full">
-          <img className="w-full" src="../assets/img/map.png"></img>
+        <div className="w-1/4 lg:w-1/2 md:w-full xxs:w-full sm:w-full h-captureMobile md:h-captureDesktop">
+          <img
+            className="w-full h-full"
+            src={imageCapture || "../assets/img/map.png"}
+          ></img>
         </div>
       </Section>
 
       <Section flexRow="between">
         <IconWithText
           icon={<PigIcon />}
-          title={`P ${estimated10YearsSavingsPesoVal}`}
+          title={`₱${estimated10YearsSavingsPesoVal}`}
           paragraph="Estimated savings over 10 years"
         />
         <IconWithText
@@ -298,7 +301,7 @@ const Personalize = ({ data, area, address }) => {
               label: "Yield Today",
             },
             {
-              content: `P ${estimateMonthlySavingsFromApiVal}`,
+              content: `₱${estimateMonthlySavingsFromApiVal}`,
               label: "Monthly savings",
             },
             {

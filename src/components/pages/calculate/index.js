@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Section from "src/components/section";
 import Map from "src/components/map";
 import PersonalizeCard from "src/components/personalizeCard";
@@ -10,14 +10,17 @@ import { listErrors, isEmail, scrollToTop } from "src/helpers/utils.service";
 import Modal from "src/components/modal";
 import { useRouter } from "next/router";
 import AutocompletePlaces from "src/components/form/autocompletePlaces";
+import { toPng } from "html-to-image";
 
 const Calculate = () => {
+  const ref = useRef(null);
   const [center, setCenter] = useState({ lat: 14.599512, lng: 120.984222 });
   const [description, setDescription] = useState("");
   const [personalizeDone, setPersonalizeDone] = useState(false);
   const [area, setArea] = useState(0);
   const [openModal, setCloseModal] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [imageCapture, setImageCapture] = useState(false);
 
   const router = useRouter();
 
@@ -52,10 +55,7 @@ const Calculate = () => {
       setLoading(true);
       postContacts(data)
         .then(() => {
-          scrollToTop();
-          setPersonalizeDone(true);
-          toast.success("Successfully sent your contact details");
-          setLoading(false);
+          handleSaveImage();
         })
         .catch((err) => {
           toast.error(listErrors(err));
@@ -76,6 +76,21 @@ const Calculate = () => {
     }
   }, [router]);
 
+  const handleSaveImage = async () => {
+    if (ref.current === null) return;
+    await toPng(ref?.current, { cacheBust: true })
+      .then((dataUrl) => {
+        setImageCapture(dataUrl);
+        setPersonalizeDone(true);
+        scrollToTop();
+        toast.success("Successfully sent your contact details");
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       {!personalizeDone ? (
@@ -83,14 +98,17 @@ const Calculate = () => {
           {openModal && <Modal onClose={() => setCloseModal(false)} />}
           <Section title={"Let’s calculate your savings!"} marginTop={"lg"}>
             <div className="w-4/12 ">
-              <AutocompletePlaces border="yes"
+              <AutocompletePlaces
+                border="yes"
                 setSelected={setCenter}
                 inputLabel="Your address"
                 setDescription={setDescription}
               />
             </div>
           </Section>
-          <Map center={center} setArea={setArea} />
+          <div ref={ref}>
+            <Map center={center} setArea={setArea} />
+          </div>
           <Section>
             <MapDetails address={description} area={area} />
           </Section>
@@ -104,7 +122,12 @@ const Calculate = () => {
           </Section>
         </>
       ) : (
-        <Personalize data={data} area={area} address={description} />
+        <Personalize
+          data={data}
+          area={area}
+          address={description}
+          imageCapture={imageCapture}
+        />
       )}
     </>
   );

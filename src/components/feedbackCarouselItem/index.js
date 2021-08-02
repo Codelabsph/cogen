@@ -30,7 +30,7 @@ const FeedbackCarouselItem = ({
                 </div>
                 <div className="pr-6">{icon}</div>
                 <div className="w-3/5 xxs:w-full">
-                  <p className="text-2xl xxs:text-xs text-justify ">
+                  <p className="text-2xl xxs:text-xs text-center ">
                     {feedback}
                   </p>
                 </div>

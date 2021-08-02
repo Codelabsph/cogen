@@ -11,32 +11,38 @@ export const systemSizekWp = (area) => {
 };
 
 export const estimatedAnnualEnergyOuputkWh = (area) => {
-  return Number(
-    systemSizekWp(area) * irradiance * 30 * 12 * efficiency
-  ).toFixed(2);
+  return numberWithCommas(
+    Number(systemSizekWp(area) * irradiance * 30 * 12 * efficiency).toFixed(2)
+  );
 };
 
 export const estimatedAnnualSavingsPeso = (area) => {
-  return Number(
-    area * irradiance * 30 * 12 * efficiency * cost_of_electricty
-  ).toFixed(2);
+  return numberWithCommas(
+    numberWithCommas(
+      Number(
+        area * irradiance * 30 * 12 * efficiency * cost_of_electricty
+      ).toFixed(2)
+    )
+  );
 };
 
 export const carbonEmissionSaved = (area) => {
-  return Number(emmision_factor * estimatedAnnualEnergyOuputkWh(area)).toFixed(
-    2
+  return numberWithCommas(
+    Number(emmision_factor * estimatedAnnualEnergyOuputkWh(area)).toFixed(2)
   );
 };
 
 export const equivalentLitersOfDiesel = (area) => {
-  return Number(
-    liters_of_diesel_emission_factor * carbonEmissionSaved(area)
-  ).toFixed(2);
+  return numberWithCommas(
+    Number(
+      liters_of_diesel_emission_factor * carbonEmissionSaved(area)
+    ).toFixed(2)
+  );
 };
 
 export const estimateMonthlySavings = (val = 0) => {
   const mutliplier = 2;
-  return Number(val * mutliplier).toFixed(2);
+  return numberWithCommas(Number(val * mutliplier).toFixed(2));
 };
 
 export const co2Reduction = (val = 0) => {
@@ -46,5 +52,9 @@ export const co2Reduction = (val = 0) => {
 
 export const estimateMonthlySavingsFromApi = (val) => {
   const mutliplier = 4.5;
-  return Number(val * mutliplier).toFixed(2);
+  return numberWithCommas(Number(val * mutliplier).toFixed(2) || 0);
+};
+
+export const numberWithCommas = (num) => {
+  return num?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };

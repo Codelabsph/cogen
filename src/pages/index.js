@@ -173,7 +173,7 @@ const HomePage = () => {
               label: "Monthly yield",
             },
             {
-              content: `P ${estimateMonthlySavingsVal}`,
+              content: `₱ ${estimateMonthlySavingsVal}`,
               label: "Estimated Monthly Savings",
             },
             {

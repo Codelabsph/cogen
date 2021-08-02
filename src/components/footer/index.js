@@ -59,29 +59,21 @@ const Footer = () => {
     <>
       <footer className="bg-black w-full mx-auto sm:px-8 lg:px-16 xl:px-40 2xl:px-56">
         <div className=" text-gray-800 py-10 flex flex-wrap justify-left xxs:flex-col">
-          <div className="py-5 w-1/2 sm:w-4/12 md:w-1/4 xxs:w-full">
-            <FooterIcon />
-            <div
-              href="#"
-              className="mt-10 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
-            >
-              <div className="inline-block">
-                <FooterLink linkLabel="Copyright © 2020  CoGen.energy" to="/" />
-              </div>
+          <div className="p-5 w-1/2 sm:w-4/12 md:w-1/4 xxs:w-full">
+            <div className="flex flex-row justify-center md:justify-start">
+              <FooterIcon />
             </div>
-            <div
-              href="#"
-              className="mt-2 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700"
-            >
+            <div className="mt-10 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+              <FooterLink linkLabel="Copyright © 2020  CoGen.energy" to="/" />
+            </div>
+            <div className="mt-2 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
               All rights reserved
             </div>
-
             <div className="flex items-center mt-6 space-x-3">
               <FbIcon />
               <LinkIcon />
             </div>
           </div>
-
           <div className="p-5 w-1/2 sm:w-4/12 md:w-2/12 xxs:w-full">
             <div className=" text-white text-xl mb-6 font-bold font-poppins">
               Home

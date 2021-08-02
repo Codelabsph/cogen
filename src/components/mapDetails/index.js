@@ -32,7 +32,7 @@ const MapDetails = ({ address, area }) => {
           />
           <IconWithText
             icon={<PigIcon />}
-            title={`P ${estimated10YearsSavingsPesoVal}`}
+            title={`₱ ${estimated10YearsSavingsPesoVal}`}
             paragraph="Estimated savings over 10 years"
           />
         </div>

@@ -3,18 +3,22 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
-      colors:{
-        primary:"#22C680",
-        secondary:"#B4E4CE",
-        cogengreen:"#22C680",
+      height: {
+        captureDesktop: "90vh",
+        captureMobile: "50vh",
       },
-      fontFamily:{
-        manrope: ['Manrope'],
-        poppins: ['Poppins'],
-        playfair: ['Playfair Display'],
+      colors: {
+        primary: "#22C680",
+        secondary: "#B4E4CE",
+        cogengreen: "#22C680",
       },
-      screens:{
-        'xxs':  {'max': '639px'}
+      fontFamily: {
+        manrope: ["Manrope"],
+        poppins: ["Poppins"],
+        playfair: ["Playfair Display"],
+      },
+      screens: {
+        xxs: { max: "639px" },
       },
     },
   },
@@ -22,4 +26,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
